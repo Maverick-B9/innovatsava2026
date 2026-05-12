@@ -1,0 +1,2626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Innovotsava 2026 — Official Event Handbook</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #050810;
+    --bg2: #080d1a;
+    --bg3: #0d1424;
+    --card: #0f172a;
+    --card2: #131e35;
+    --border: rgba(99,179,255,0.12);
+    --border2: rgba(99,179,255,0.22);
+    --primary: #3b82f6;
+    --primary-glow: rgba(59,130,246,0.3);
+    --accent: #06b6d4;
+    --accent2: #8b5cf6;
+    --gold: #f59e0b;
+    --gold-light: #fcd34d;
+    --green: #10b981;
+    --red: #ef4444;
+    --text: #e2e8f0;
+    --text-dim: #94a3b8;
+    --text-muted: #475569;
+    --white: #ffffff;
+    --gradient1: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+    --gradient2: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+    --gradient3: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ─── NOISE TEXTURE ─── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.5;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(5,8,16,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    background: var(--gradient1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 0.25rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 0.35rem 0.7rem;
+    border-radius: 6px;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .nav-links a:hover {
+    color: var(--white);
+    background: var(--border);
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(59,130,246,0.15) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 40% at 80% 100%, rgba(139,92,246,0.1) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 30% at 20% 80%, rgba(6,182,212,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(59,130,246,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59,130,246,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(59,130,246,0.12);
+    border: 1px solid rgba(59,130,246,0.3);
+    border-radius: 100px;
+    padding: 0.4rem 1rem;
+    font-size: 0.78rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 2rem;
+    animation: fadeInDown 0.8s ease both;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 8px var(--green);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
+
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(3.5rem, 10vw, 7rem);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    animation: fadeInUp 0.8s ease 0.2s both;
+  }
+
+  .hero h1 .line1 {
+    display: block;
+    background: linear-gradient(135deg, #ffffff 0%, #93c5fd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero h1 .line2 {
+    display: block;
+    background: var(--gradient1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: var(--accent);
+    letter-spacing: 0.3em;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.8s ease 0.3s both;
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--text-dim);
+    max-width: 560px;
+    margin: 0 auto 2.5rem;
+    font-weight: 300;
+    animation: fadeInUp 0.8s ease 0.4s both;
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    animation: fadeInUp 0.8s ease 0.5s both;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .hero-meta-label {
+    font-size: 0.7rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text-muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .hero-meta-value {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--white);
+  }
+
+  .hero-divider {
+    width: 1px;
+    height: 40px;
+    background: var(--border2);
+    align-self: center;
+  }
+
+  .hero-events {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    animation: fadeInUp 0.8s ease 0.6s both;
+  }
+
+  .event-pill {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    font-weight: 500;
+  }
+
+  .event-pill.highlight {
+    background: rgba(59,130,246,0.1);
+    border-color: rgba(59,130,246,0.3);
+    color: #93c5fd;
+  }
+
+  /* ─── SECTION STRUCTURE ─── */
+  .section {
+    padding: 5rem 0;
+    position: relative;
+  }
+
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--primary);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    letter-spacing: -0.02em;
+    color: var(--white);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+
+  .section-title span {
+    background: var(--gradient1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .section-desc {
+    color: var(--text-dim);
+    font-size: 1rem;
+    max-width: 680px;
+    margin-bottom: 3rem;
+    font-weight: 300;
+  }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border2) 20%, var(--border2) 80%, transparent);
+    margin: 0;
+  }
+
+  /* ─── TOC ─── */
+  #toc { background: var(--bg2); }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem 1.2rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text-dim);
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: all 0.25s;
+  }
+
+  .toc-item:hover {
+    background: var(--card2);
+    border-color: var(--border2);
+    color: var(--white);
+    transform: translateX(4px);
+  }
+
+  .toc-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--primary);
+    min-width: 28px;
+    font-weight: 600;
+  }
+
+  .toc-arrow {
+    margin-left: auto;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    transition: transform 0.2s;
+  }
+
+  .toc-item:hover .toc-arrow { transform: translateX(3px); }
+
+  /* ─── OVERVIEW CARDS ─── */
+  .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .overview-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.3rem 1.5rem;
+    transition: border-color 0.2s;
+  }
+
+  .overview-card:hover { border-color: var(--border2); }
+
+  .overview-card-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  .overview-card-value {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1.3;
+  }
+
+  /* ─── DAY SCHEDULE ─── */
+  .day-header {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .day-badge {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 2.5rem;
+    line-height: 1;
+    background: var(--gradient1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    min-width: 80px;
+  }
+
+  .day-info h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  .day-info p {
+    color: var(--text-dim);
+    font-size: 0.88rem;
+  }
+
+  .day-tag {
+    margin-left: auto;
+    background: rgba(59,130,246,0.1);
+    border: 1px solid rgba(59,130,246,0.25);
+    border-radius: 8px;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.78rem;
+    color: #93c5fd;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+  }
+
+  .schedule-table th {
+    background: var(--bg3);
+    color: var(--text-dim);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .schedule-table td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9rem;
+    vertical-align: top;
+  }
+
+  .schedule-table tr:last-child td { border-bottom: none; }
+
+  .schedule-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+  .time-cell {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--accent);
+    white-space: nowrap;
+    font-weight: 600;
+    min-width: 130px;
+  }
+
+  .activity-cell { color: var(--text); }
+
+  .tag-parallel {
+    display: inline-block;
+    background: rgba(139,92,246,0.15);
+    border: 1px solid rgba(139,92,246,0.3);
+    border-radius: 4px;
+    padding: 0.1rem 0.5rem;
+    font-size: 0.68rem;
+    color: #c4b5fd;
+    font-family: 'JetBrains Mono', monospace;
+    margin-left: 0.5rem;
+  }
+
+  /* ─── EVENT CARDS ─── */
+  .event-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+    transition: border-color 0.3s;
+  }
+
+  .event-card:hover { border-color: var(--border2); }
+
+  .event-card-header {
+    padding: 2rem 2rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .event-icon {
+    width: 56px; height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    flex-shrink: 0;
+  }
+
+  .icon-blue { background: rgba(59,130,246,0.15); }
+  .icon-cyan { background: rgba(6,182,212,0.15); }
+  .icon-purple { background: rgba(139,92,246,0.15); }
+  .icon-gold { background: rgba(245,158,11,0.15); }
+  .icon-green { background: rgba(16,185,129,0.15); }
+
+  .event-card-title-group { flex: 1; }
+
+  .event-domain {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  .event-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 0.25rem;
+  }
+
+  .event-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .meta-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.22rem 0.6rem;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .event-card-body {
+    padding: 1.5rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  @media(max-width: 640px) {
+    .event-card-body { grid-template-columns: 1fr; }
+    nav { display: none; }
+  }
+
+  .event-section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .event-card-body p {
+    color: var(--text-dim);
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  ul.detail-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  ul.detail-list li {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  ul.detail-list li::before {
+    content: '›';
+    color: var(--primary);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.05em;
+  }
+
+  /* ─── SCORE TABLE ─── */
+  .score-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .score-table th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    background: rgba(0,0,0,0.2);
+  }
+
+  .score-table td {
+    padding: 0.55rem 0.75rem;
+    font-size: 0.82rem;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    color: var(--text-dim);
+    vertical-align: top;
+  }
+
+  .score-table tr:last-child td {
+    border-bottom: none;
+    font-weight: 600;
+    color: var(--white);
+    background: rgba(59,130,246,0.06);
+  }
+
+  .score-marks {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  .score-bar-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .score-bar {
+    height: 4px;
+    border-radius: 2px;
+    background: var(--gradient1);
+    flex-shrink: 0;
+  }
+
+  /* ─── CALLOUT BOX ─── */
+  .callout {
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    margin: 1rem 0;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    font-size: 0.88rem;
+  }
+
+  .callout-warn {
+    background: rgba(245,158,11,0.08);
+    border: 1px solid rgba(245,158,11,0.25);
+    color: #fde68a;
+  }
+
+  .callout-info {
+    background: rgba(59,130,246,0.08);
+    border: 1px solid rgba(59,130,246,0.25);
+    color: #bfdbfe;
+  }
+
+  .callout-danger {
+    background: rgba(239,68,68,0.08);
+    border: 1px solid rgba(239,68,68,0.25);
+    color: #fca5a5;
+  }
+
+  .callout-success {
+    background: rgba(16,185,129,0.08);
+    border: 1px solid rgba(16,185,129,0.25);
+    color: #6ee7b7;
+  }
+
+  .callout-icon { font-size: 1rem; flex-shrink: 0; margin-top: 0.1em; }
+
+  /* ─── FOCUS AREAS ─── */
+  .focus-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .focus-tag {
+    background: rgba(59,130,246,0.08);
+    border: 1px solid rgba(59,130,246,0.2);
+    border-radius: 6px;
+    padding: 0.25rem 0.65rem;
+    font-size: 0.78rem;
+    color: #93c5fd;
+  }
+
+  /* ─── SECTIONS BG ALT ─── */
+  .section-alt { background: var(--bg2); }
+  .section-alt2 { background: var(--bg3); }
+
+  /* ─── CONCLAVE DOMAINS ─── */
+  .domain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .domain-card {
+    background: var(--card2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+    transition: all 0.2s;
+  }
+
+  .domain-card:hover {
+    border-color: var(--border2);
+    transform: translateY(-2px);
+  }
+
+  .domain-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  .domain-name {
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--white);
+    margin-bottom: 0.3rem;
+  }
+
+  .domain-desc {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  /* ─── PRIZE TABLE ─── */
+  .prize-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  @media(max-width: 600px) { .prize-grid { grid-template-columns: 1fr; } }
+
+  .prize-card {
+    border-radius: 12px;
+    padding: 1.3rem;
+    text-align: center;
+    border: 1px solid;
+  }
+
+  .prize-1 {
+    background: rgba(245,158,11,0.08);
+    border-color: rgba(245,158,11,0.3);
+  }
+
+  .prize-2 {
+    background: rgba(148,163,184,0.06);
+    border-color: rgba(148,163,184,0.25);
+  }
+
+  .prize-3 {
+    background: rgba(180,83,9,0.08);
+    border-color: rgba(180,83,9,0.25);
+  }
+
+  .prize-medal { font-size: 2rem; margin-bottom: 0.4rem; display: block; }
+
+  .prize-pos {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .prize-1 .prize-pos { color: var(--gold-light); }
+  .prize-2 .prize-pos { color: #cbd5e1; }
+  .prize-3 .prize-pos { color: #d97706; }
+
+  .prize-detail {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    line-height: 1.4;
+  }
+
+  /* ─── GUIDELINES ─── */
+  .guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .guide-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+
+  .guide-card-title {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--white);
+    margin-bottom: 0.9rem;
+  }
+
+  .guide-icon {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    background: rgba(59,130,246,0.12);
+    flex-shrink: 0;
+  }
+
+  /* ─── JUDGING PANEL ─── */
+  .judge-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .judge-table th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    padding: 0.6rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    background: rgba(0,0,0,0.2);
+  }
+
+  .judge-table td {
+    padding: 0.7rem 1rem;
+    font-size: 0.88rem;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    color: var(--text-dim);
+  }
+
+  .judge-table td:first-child { color: var(--white); font-weight: 500; }
+
+  /* ─── SPONSORS ─── */
+  .sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  @media(max-width: 640px) { .sponsor-grid { grid-template-columns: 1fr; } }
+
+  .sponsor-tier {
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid;
+  }
+
+  .tier-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .tier-invest {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    margin-bottom: 0.75rem;
+    opacity: 0.7;
+  }
+
+  .tier-1 { background: rgba(245,158,11,0.07); border-color: rgba(245,158,11,0.3); }
+  .tier-1 .tier-title { color: var(--gold-light); }
+
+  .tier-2 { background: rgba(99,102,241,0.07); border-color: rgba(99,102,241,0.3); }
+  .tier-2 .tier-title { color: #a5b4fc; }
+
+  .tier-3 { background: rgba(6,182,212,0.06); border-color: rgba(6,182,212,0.25); }
+  .tier-3 .tier-title { color: #67e8f9; }
+
+  /* ─── CONTACTS ─── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+
+  .contact-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.2rem 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .contact-avatar {
+    width: 42px; height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    background: rgba(59,130,246,0.12);
+    flex-shrink: 0;
+  }
+
+  .contact-name {
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--white);
+  }
+
+  .contact-role {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.1rem;
+  }
+
+  /* ─── FAQ ─── */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .faq-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .faq-q {
+    padding: 1rem 1.3rem;
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--white);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+  }
+
+  .faq-q:hover { color: #93c5fd; }
+
+  .faq-toggle { color: var(--primary); font-size: 1.1rem; transition: transform 0.2s; }
+
+  .faq-item.open .faq-toggle { transform: rotate(45deg); }
+
+  .faq-a {
+    padding: 0 1.3rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.2s;
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  .faq-item.open .faq-a {
+    max-height: 300px;
+    padding: 0 1.3rem 1rem;
+  }
+
+  /* ─── CLOSING ─── */
+  .closing {
+    padding: 6rem 2rem;
+    text-align: center;
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .closing::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 50% at 50% 100%, rgba(59,130,246,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .closing h2 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: -0.02em;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+
+  .closing p {
+    font-size: 1.05rem;
+    color: var(--text-dim);
+    max-width: 560px;
+    margin: 0 auto 2rem;
+    font-weight: 300;
+  }
+
+  .closing-quote {
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--text-dim);
+    max-width: 480px;
+    margin: 0 auto 2.5rem;
+    border-left: 3px solid var(--primary);
+    padding-left: 1.2rem;
+    text-align: left;
+  }
+
+  .closing-website {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.88rem;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+
+  /* ─── EMERGENCY ─── */
+  .emergency-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  .emergency-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.3rem 1.5rem;
+  }
+
+  .emergency-card h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* ─── SCROLL BAR ─── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+  /* ─── WELCOME ─── */
+  .welcome-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .welcome-card::before {
+    content: '"';
+    position: absolute;
+    top: -1rem;
+    right: 1.5rem;
+    font-size: 8rem;
+    color: rgba(59,130,246,0.06);
+    font-family: Georgia, serif;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .welcome-card p {
+    font-size: 1rem;
+    color: var(--text-dim);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .welcome-card p:last-child { margin-bottom: 0; }
+
+  .welcome-sig {
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .welcome-sig-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  .welcome-sig-role {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+
+  /* ─── CONDUCT ─── */
+  .dos-donts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  @media(max-width: 600px) { .dos-donts { grid-template-columns: 1fr; } }
+
+  .do-card, .dont-card {
+    border-radius: 10px;
+    padding: 1.2rem 1.4rem;
+  }
+
+  .do-card {
+    background: rgba(16,185,129,0.07);
+    border: 1px solid rgba(16,185,129,0.2);
+  }
+
+  .dont-card {
+    background: rgba(239,68,68,0.07);
+    border: 1px solid rgba(239,68,68,0.2);
+  }
+
+  .do-card h5, .dont-card h5 {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+
+  .do-card h5 { color: var(--green); }
+  .dont-card h5 { color: var(--red); }
+
+  .do-card ul, .dont-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .do-card li, .dont-card li {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .do-card li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+  .dont-card li::before { content: '✗'; color: var(--red); font-weight: 700; flex-shrink: 0; }
+
+  /* ─── SECTION SEPARATOR LABEL ─── */
+  .section-sep {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .section-sep-line { flex: 1; height: 1px; background: var(--border); }
+
+  .section-sep-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* ─── FULL-WIDTH SECTION BANNER ─── */
+  .event-banner {
+    background: linear-gradient(90deg, rgba(59,130,246,0.08) 0%, rgba(6,182,212,0.05) 100%);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 3rem 0;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .register-btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    color: var(--white);
+    background: var(--gradient1);
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px var(--primary-glow);
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 2.5rem;
+    animation: fadeInUp 0.8s ease 0.45s both;
+  }
+
+  .register-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59,130,246,0.5);
+    color: var(--white);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">INNOVOTSAVA 2026</span>
+  <ul class="nav-links">
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#day1">Day 1</a></li>
+    <li><a href="#day2">Day 2</a></li>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#guidelines">Guidelines</a></li>
+    <li><a href="#conduct">Conduct</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO / COVER -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-badge">⬢ National Level Technology Festival &nbsp;·&nbsp; Stack Forge Club</div>
+
+  <h1>
+    <span class="line1">INNOVOTSAVA</span>
+    <span class="line2">2026</span>
+  </h1>
+  <div class="hero-year">J U N E &nbsp;·&nbsp; 0 4 – 0 5 &nbsp;·&nbsp; 2 0 2 6</div>
+  <p class="hero-sub">Innovation at its Best — A convergence of competitive technology, applied research, entrepreneurship, and cultural celebration.</p>
+
+  <a href="https://forms.gle/czSNtNMVkFj6h6jK9" target="_blank" class="register-btn">Register Here</a>
+
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">Venue</span>
+      <span class="hero-meta-value">APJ Abdul Kalam Open Air Theatre</span>
+    </div>
+    <div class="hero-divider"></div>
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">Campus</span>
+      <span class="hero-meta-value">MITM, Mysore</span>
+    </div>
+    <div class="hero-divider"></div>
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">Capacity</span>
+      <span class="hero-meta-value">3,000 Attendees</span>
+    </div>
+    <div class="hero-divider"></div>
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">Format</span>
+      <span class="hero-meta-value">Two-Day Event</span>
+    </div>
+  </div>
+
+  <div class="hero-events">
+    <span class="event-pill highlight">🤖 Robotics Competition</span>
+    <span class="event-pill highlight">🚁 UAV Drone Competition</span>
+    <span class="event-pill highlight">🎮 AI Gaming Competition</span>
+    <span class="event-pill highlight">💡 Business Conclave</span>
+    <span class="event-pill highlight">🔬 Student Project Expo</span>
+    <span class="event-pill">🏭 10 Company AI Demos</span>
+    <span class="event-pill">🎤 Keynote Speeches</span>
+    <span class="event-pill">🌍 NGO Sessions</span>
+    <span class="event-pill">🎭 Cultural Programme</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WELCOME -->
+<section class="section" id="welcome">
+  <div class="section-inner">
+    <div class="section-label">§ 01 — Welcome</div>
+    <h2 class="section-title">A Message from the <span>Organizers</span></h2>
+    <p class="section-desc">Maharaja Institute of Technology Mysore and the Stack Forge Club warmly welcome you to Innovotsava 2026.</p>
+
+    <div class="welcome-card">
+      <p>Innovotsava 2026 is more than a college festival — it is a movement. We have designed this two-day national-level experience to bridge the gap between academia, industry, and society, giving students from across the country a platform to demonstrate technology that solves real problems.</p>
+      <p>Whether you're here to compete in robotics, pitch a groundbreaking AI startup idea, showcase your research, or witness the future of AI from industry leaders — there is something here for every curious mind. We encourage you to collaborate, to push boundaries, and to leave inspired.</p>
+      <p>This handbook is your complete guide to Innovotsava 2026. Please read it carefully and carry it with you throughout the event. We wish you the very best in your endeavours.</p>
+      <div class="welcome-sig">
+        <span class="welcome-sig-name">Dr. Murali S</span>
+        <span class="welcome-sig-role">Principal, MITM — Patron, Innovotsava 2026</span>
+      </div>
+      <div class="welcome-sig" style="margin-top:1rem;">
+        <span class="welcome-sig-name">Dr. Shivamurthy R C</span>
+        <span class="welcome-sig-role">Head of Department, CSE — Event Convenor</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TABLE OF CONTENTS -->
+<section class="section section-alt" id="toc">
+  <div class="section-inner">
+    <div class="section-label">§ 02 — Navigation</div>
+    <h2 class="section-title">Table of <span>Contents</span></h2>
+    <div class="toc-grid">
+      <a href="#overview" class="toc-item"><span class="toc-num">01</span> Event Overview <span class="toc-arrow">→</span></a>
+      <a href="#venue" class="toc-item"><span class="toc-num">02</span> Venue & Logistics <span class="toc-arrow">→</span></a>
+      <a href="#team" class="toc-item"><span class="toc-num">03</span> Organizing Team <span class="toc-arrow">→</span></a>
+      <a href="#day1" class="toc-item"><span class="toc-num">04</span> Day 1 — TechXcelerate Schedule <span class="toc-arrow">→</span></a>
+      <a href="#autobots" class="toc-item"><span class="toc-num">05</span> Rise of Autobots (Robotics) <span class="toc-arrow">→</span></a>
+      <a href="#drone" class="toc-item"><span class="toc-num">06</span> Drone Fare (UAV) <span class="toc-arrow">→</span></a>
+      <a href="#gamemania" class="toc-item"><span class="toc-num">07</span> Game Mania (AI & Gaming) <span class="toc-arrow">→</span></a>
+      <a href="#conclave-prelims" class="toc-item"><span class="toc-num">08</span> AI Business Conclave — Prelims <span class="toc-arrow">→</span></a>
+      <a href="#expo" class="toc-item"><span class="toc-num">09</span> Student Project Expo <span class="toc-arrow">→</span></a>
+      <a href="#day2" class="toc-item"><span class="toc-num">10</span> Day 2 — AI Conclave Schedule <span class="toc-arrow">→</span></a>
+      <a href="#demos" class="toc-item"><span class="toc-num">11</span> Company AI Demonstrations <span class="toc-arrow">→</span></a>
+      <a href="#conclave-finals" class="toc-item"><span class="toc-num">12</span> AI Business Conclave — Finals <span class="toc-arrow">→</span></a>
+      <a href="#keynote" class="toc-item"><span class="toc-num">13</span> Keynote Speeches <span class="toc-arrow">→</span></a>
+      <a href="#ngo" class="toc-item"><span class="toc-num">14</span> NGO Sessions <span class="toc-arrow">→</span></a>
+      <a href="#cultural" class="toc-item"><span class="toc-num">15</span> Cultural & Valedictory <span class="toc-arrow">→</span></a>
+      <a href="#guidelines" class="toc-item"><span class="toc-num">16</span> Participant Guidelines <span class="toc-arrow">→</span></a>
+      <a href="#judging" class="toc-item"><span class="toc-num">17</span> Judging Framework <span class="toc-arrow">→</span></a>
+      <a href="#sponsors" class="toc-item"><span class="toc-num">18</span> Sponsorship Tiers <span class="toc-arrow">→</span></a>
+      <a href="#conduct" class="toc-item"><span class="toc-num">19</span> Code of Conduct <span class="toc-arrow">→</span></a>
+      <a href="#emergency" class="toc-item"><span class="toc-num">20</span> Emergency Protocols <span class="toc-arrow">→</span></a>
+      <a href="#faq" class="toc-item"><span class="toc-num">21</span> FAQs <span class="toc-arrow">→</span></a>
+      <a href="#contact" class="toc-item"><span class="toc-num">22</span> Contact & Support <span class="toc-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EVENT OVERVIEW -->
+<section class="section" id="overview">
+  <div class="section-inner">
+    <div class="section-label">§ 03 — Overview</div>
+    <h2 class="section-title">Event <span>Overview</span></h2>
+    <p class="section-desc">Innovotsava 2026 — a national-level technology festival organized by the Stack Forge Club, Dept. of CSE, MITM.</p>
+
+    <div class="overview-grid">
+      <div class="overview-card"><div class="overview-card-label">Event Name</div><div class="overview-card-value">Innovotsava 2026</div></div>
+      <div class="overview-card"><div class="overview-card-label">Organizing Body</div><div class="overview-card-value">Stack Forge Club, Dept. of CSE, MITM</div></div>
+      <div class="overview-card"><div class="overview-card-label">Dates</div><div class="overview-card-value">4 June (Day 1) & 5 June 2026 (Day 2)</div></div>
+      <div class="overview-card"><div class="overview-card-label">Venue</div><div class="overview-card-value">APJ Abdul Kalam Open Air Theatre, MITM Campus, Mysore</div></div>
+      <div class="overview-card"><div class="overview-card-label">Max Capacity</div><div class="overview-card-value">3,000 Attendees</div></div>
+      <div class="overview-card"><div class="overview-card-label">Connectivity</div><div class="overview-card-value">Wi-Fi across entire venue</div></div>
+      <div class="overview-card"><div class="overview-card-label">Day 1 Theme</div><div class="overview-card-value">TechXcelerate — Competitions, Expo & Business Conclave Prelims</div></div>
+      <div class="overview-card"><div class="overview-card-label">Day 2 Theme</div><div class="overview-card-value">AI Conclave — Industry Demos, Finals, NGOs & Culturals</div></div>
+      <div class="overview-card"><div class="overview-card-label">Team Format</div><div class="overview-card-value">4 members per team (min. 1 from different dept.)</div></div>
+      <div class="overview-card"><div class="overview-card-label">Registration</div><div class="overview-card-value">Pre-registration mandatory — online portal only</div></div>
+    </div>
+
+    <div class="callout callout-info">
+      <span class="callout-icon">ℹ️</span>
+      <span><strong>Mission Statement:</strong> To cultivate a generation of technologists and entrepreneurs by creating high-impact experiential platforms that bridge academia, industry, and society.</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- VENUE -->
+<section class="section section-alt" id="venue">
+  <div class="section-inner">
+    <div class="section-label">§ 04 — Venue</div>
+    <h2 class="section-title">Venue & <span>Logistics</span></h2>
+    <p class="section-desc">All event activities take place at the APJ Abdul Kalam Open Air Theatre, MITM Campus, Mysore.</p>
+
+    <div class="overview-grid" style="margin-bottom:2rem;">
+      <div class="overview-card"><div class="overview-card-label">Venue</div><div class="overview-card-value">APJ Abdul Kalam Open Air Theatre</div></div>
+      <div class="overview-card"><div class="overview-card-label">Seating</div><div class="overview-card-value">3,000 (maximum)</div></div>
+      <div class="overview-card"><div class="overview-card-label">Stage</div><div class="overview-card-value">Main amphitheater stage with PA system & projection</div></div>
+      <div class="overview-card"><div class="overview-card-label">Parallel Tracks</div><div class="overview-card-value">4 simultaneous arenas on Day 1 morning</div></div>
+      <div class="overview-card"><div class="overview-card-label">Power</div><div class="overview-card-value">Industrial backup generator on standby</div></div>
+      <div class="overview-card"><div class="overview-card-label">Medical</div><div class="overview-card-value">On-site first-aid team, both days</div></div>
+      <div class="overview-card"><div class="overview-card-label">Parking</div><div class="overview-card-value">Designated student, faculty & VIP zones</div></div>
+      <div class="overview-card"><div class="overview-card-label">Wi-Fi</div><div class="overview-card-value">Full coverage across venue + dedicated 5G node</div></div>
+    </div>
+
+    <div class="section-sep"><div class="section-sep-line"></div><span class="section-sep-text">Reporting & Entry</span><div class="section-sep-line"></div></div>
+
+    <div class="callout callout-warn" style="margin-bottom:0.75rem;">
+      <span class="callout-icon">⏱️</span>
+      <span><strong>Day 1 Registration Desk opens at 08:00 AM.</strong> All participants must report at least 45 minutes before their scheduled slot. Carry your confirmation email and valid college ID.</span>
+    </div>
+    <div class="callout callout-warn" style="margin-bottom:0.75rem;">
+      <span class="callout-icon">⏱️</span>
+      <span><strong>Day 2 Registration/Check-in opens at 08:30 AM.</strong> Each competition domain has a dedicated entry gate and marshalling zone.</span>
+    </div>
+    <div class="callout callout-info">
+      <span class="callout-icon">🚁</span>
+      <span><strong>Drone pilots</strong> must carry DGCA-compliant documentation for their UAV. Equipment or robots brought on-site must be declared at the registration desk.</span>
+    </div>
+
+    <div class="section-sep" style="margin-top:2rem;"><div class="section-sep-line"></div><span class="section-sep-text">Food & Accommodation</span><div class="section-sep-line"></div></div>
+
+    <div class="guide-grid">
+      <div class="guide-card">
+        <div class="guide-card-title"><div class="guide-icon">🍽️</div> Food & Refreshments</div>
+        <ul class="detail-list">
+          <li>Complimentary lunch for all registered participants on both days</li>
+          <li>Refreshment stalls operational from 08:00 AM to 05:00 PM (Day 1)</li>
+          <li>Day 2 stalls open from 08:30 AM to end of event</li>
+          <li>Participants with dietary restrictions must notify at registration</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title"><div class="guide-icon">🏨</div> Accommodation & Travel</div>
+        <ul class="detail-list">
+          <li>Outstation participants responsible for own accommodation</li>
+          <li>MITM Guest House bookings on request (subject to availability)</li>
+          <li>Transportation from Manipal bus stand to MITM arranged on both days</li>
+          <li>Contact organizing committee for Guest House requests in advance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ORGANIZING TEAM -->
+<section class="section" id="team">
+  <div class="section-inner">
+    <div class="section-label">§ 05 — Team</div>
+    <h2 class="section-title">Organizing <span>Team</span></h2>
+    <p class="section-desc">Innovotsava 2026 is managed by nine specialized sub-departments under the Stack Forge Club.</p>
+
+    <table class="schedule-table" style="margin-bottom:2rem;">
+      <thead><tr><th>Department</th><th>Responsibilities</th></tr></thead>
+      <tbody>
+        <tr><td class="activity-cell" style="color:var(--white);font-weight:500;">Core Committee</td><td class="activity-cell">Overall event oversight, final approvals, liaison with college administration</td></tr>
+        <tr><td class="activity-cell" style="color:var(--white);font-weight:500;">Technical Team</td><td class="activity-cell">Competition design, judging coordination, demo environment setup</td></tr>
+        <tr><td class="activity-cell" style="color:var(--white);font-weight:500;">Logistics & Ops</td><td class="activity-cell">Venue setup, equipment transport, arena demarcation</td></tr>
+        <tr><td class="activity-cell" style="color:var(--white);font-weight:500;">Registrations & Finance</td><td class="activity-cell">Online portal management, fee collection, participant database</td></tr>
+        <tr><td class="activity-cell" style="color:var(--white);font-weight:500;">Marketing & PR</td><td class="activity-cell">Social media, posters, sponsorship outreach, press</td></tr>
+        <tr><td class="activity-cell" style="color:var(--white);font-weight:500;">Design Team</td><td class="activity-cell">Branding, certificate design, stage decoration, digital creatives</td></tr>
+        <tr><td class="activity-cell" style="color:var(--white);font-weight:500;">Hospitality</td><td class="activity-cell">Guest management, food coordination, VIP protocol</td></tr>
+        <tr><td class="activity-cell" style="color:var(--white);font-weight:500;">Documentation</td><td class="activity-cell">Photography, videography, live streaming, post-event report</td></tr>
+        <tr><td class="activity-cell" style="color:var(--white);font-weight:500;">Volunteers</td><td class="activity-cell">Crowd management, participant guidance, arena support</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-info">
+      <span class="callout-icon">👨‍🏫</span>
+      <span><strong>Faculty Advisors:</strong> Each registered team is assigned a dedicated faculty advisor. Advisors guide technical direction, monitor progress at checkpoints, certify team composition, and attend on-site during presentation slots. Teams may not switch advisors without written Core Committee approval.</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- DAY 1 SCHEDULE -->
+<section class="section section-alt2" id="day1">
+  <div class="section-inner">
+    <div class="section-label">§ 06 — Day 1</div>
+    <h2 class="section-title">Day 1 — <span>TechXcelerate</span></h2>
+    <p class="section-desc">4 June 2026 | Registration opens 08:00 AM | Hard close 05:00 PM</p>
+
+    <div class="day-header">
+      <div class="day-badge">D1</div>
+      <div class="day-info">
+        <h3>TechXcelerate</h3>
+        <p>Competitions, Student Expo & Business Conclave Prelims</p>
+      </div>
+      <div class="day-tag">4 JUNE 2026</div>
+    </div>
+
+    <table class="schedule-table">
+      <thead><tr><th>Time</th><th>Activity</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="time-cell">08:00 – 08:45</td>
+          <td class="activity-cell">📋 Registration & On-site Check-in (all tracks)</td>
+        </tr>
+        <tr>
+          <td class="time-cell">08:45 – 09:15</td>
+          <td class="activity-cell">🎤 Opening Ceremony — Welcome Address, Lamp Lighting, Dignitaries' Speeches</td>
+        </tr>
+        <tr>
+          <td class="time-cell">09:15 – 13:15</td>
+          <td class="activity-cell">
+            <strong style="color:var(--white);">⚡ PARALLEL MORNING TRACKS</strong> <span class="tag-parallel">ALL 4 SIMULTANEOUS</span><br>
+            <span style="color:var(--text-muted);font-size:0.82rem;">
+              Track A: 🤖 Rise of Autobots (Robotics) — 20 teams · 15 min/team<br>
+              Track B: 🚁 Drone Fare (UAV) — 20 teams · 15 min/team<br>
+              Track C: 🎮 Game Mania (AI Agents & Gaming) — 20 teams · 15 min/team<br>
+              Track D: 💡 AI Business Conclave Prelims — 25 teams · 15 min/team
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td class="time-cell">13:15 – 14:00</td>
+          <td class="activity-cell">🍽️ Lunch Break</td>
+        </tr>
+        <tr>
+          <td class="time-cell">14:00 – 16:30</td>
+          <td class="activity-cell">🔬 Student Project Expo — Top 10 teams present to industry dignitaries (15 min/team)</td>
+        </tr>
+        <tr>
+          <td class="time-cell">16:30 – 17:00</td>
+          <td class="activity-cell">🌍 NGO Sessions — 2 NGOs × 20 minutes (impact introduction talks)</td>
+        </tr>
+        <tr>
+          <td class="time-cell">17:00 – 17:30</td>
+          <td class="activity-cell">🤝 Networking Session + Competition Results Announced (simultaneously)</td>
+        </tr>
+        <tr>
+          <td class="time-cell">17:30</td>
+          <td class="activity-cell">🔚 Day 1 Close</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-warn">
+      <span class="callout-icon">📢</span>
+      <span><strong>Results Announcement:</strong> Winners for Rise of Autobots, Drone Fare, and Game Mania announced at 5:00 PM during the Networking Session. Top 10 AI Business Conclave teams advancing to Day 2 Finals also announced at this time. Formal prize distribution at Day 2 Valedictory.</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EVENTS SECTION -->
+<section class="section" id="events">
+  <div class="section-inner">
+    <div class="section-label">§ 07 — Competitions</div>
+    <h2 class="section-title">Detailed <span>Event Sections</span></h2>
+    <p class="section-desc">Full breakdown of all five competitions and showcases at Innovotsava 2026.</p>
+  </div>
+</section>
+
+<!-- AUTOBOTS -->
+<section class="section section-alt" id="autobots" style="padding-top:1rem;">
+  <div class="section-inner">
+
+    <div class="event-card">
+      <div class="event-card-header">
+        <div class="event-icon icon-blue">🤖</div>
+        <div class="event-card-title-group">
+          <div class="event-domain">Robotics & Autonomous Systems</div>
+          <h3>The Rise of Autobots</h3>
+          <div class="event-card-meta">
+            <span class="meta-chip">🏟️ Day 1</span>
+            <span class="meta-chip">👥 20 Teams</span>
+            <span class="meta-chip">⏱️ 12 min demo + 3 min Q&A</span>
+            <span class="meta-chip">👤 4 Members/Team</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-card-body">
+        <div>
+          <div class="event-section-title">Competition Overview</div>
+          <p>Design, build, and demonstrate autonomous or semi-autonomous robotic systems that address a real-world problem. Focus on innovation in hardware design, software intelligence, and practical application. Teams present a live working demonstration to a judge panel.</p>
+
+          <div style="margin-top:1.2rem;">
+            <div class="event-section-title">Focus Areas</div>
+            <div class="focus-grid">
+              <span class="focus-tag">Industrial Automation</span>
+              <span class="focus-tag">Agricultural Robotics</span>
+              <span class="focus-tag">Healthcare & Assistive Tech</span>
+              <span class="focus-tag">Search & Rescue</span>
+              <span class="focus-tag">Open Innovation</span>
+            </div>
+          </div>
+
+          <div style="margin-top:1.2rem;">
+            <div class="event-section-title">Technical Requirements</div>
+            <ul class="detail-list">
+              <li>Any programming language or microcontroller permitted (Arduino, RPi, ROS, etc.)</li>
+              <li>Battery-powered only — no mains connection during demo</li>
+              <li>Max dimensions: 60×60×80 cm (stationary). Flying robots not allowed in this category</li>
+              <li>Max weight: 5 kg (heavier builds need prior written approval)</li>
+              <li>Remote-controlled allowed; full autonomy scores higher</li>
+              <li>Bring own tools, spare parts, and charging equipment</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="event-section-title">Judging Scorecard</div>
+          <table class="score-table">
+            <thead><tr><th>Criterion</th><th>Max</th></tr></thead>
+            <tbody>
+              <tr><td>Innovation & Originality</td><td><span class="score-marks">25</span></td></tr>
+              <tr><td>Technical Complexity</td><td><span class="score-marks">20</span></td></tr>
+              <tr><td>Functionality & Live Demo</td><td><span class="score-marks">25</span></td></tr>
+              <tr><td>Real-World Relevance</td><td><span class="score-marks">15</span></td></tr>
+              <tr><td>Presentation & Communication</td><td><span class="score-marks">15</span></td></tr>
+              <tr><td><strong>TOTAL</strong></td><td><span class="score-marks">100</span></td></tr>
+            </tbody>
+          </table>
+
+          <div class="callout callout-danger" style="margin-top:1rem;">
+            <span class="callout-icon">🚫</span>
+            <div>
+              <strong>Key Restrictions:</strong><br>
+              No pre-built commercial robots. No paid commercial software. Any robot causing arena damage = immediate disqualification. No re-runs once slot is over.
+            </div>
+          </div>
+
+          <div class="callout callout-success" style="margin-top:0.75rem;">
+            <span class="callout-icon">✅</span>
+            <span>Open-source libraries and frameworks are fully permitted.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DRONE FARE -->
+    <div class="event-card" id="drone">
+      <div class="event-card-header">
+        <div class="event-icon icon-cyan">🚁</div>
+        <div class="event-card-title-group">
+          <div class="event-domain">Unmanned Aerial Vehicles & Aerial Robotics</div>
+          <h3>Drone Fare</h3>
+          <div class="event-card-meta">
+            <span class="meta-chip">🏟️ Day 1</span>
+            <span class="meta-chip">👥 20 Teams</span>
+            <span class="meta-chip">⏱️ 12 min demo + 3 min Q&A</span>
+            <span class="meta-chip">👤 4 Members/Team</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-card-body">
+        <div>
+          <div class="event-section-title">Competition Overview</div>
+          <p>Design, build, and demonstrate UAV-based systems that solve an identified problem or complete a defined aerial mission. Evaluated on engineering design, flight stability, payload management, autonomous capabilities, and safety compliance.</p>
+
+          <div style="margin-top:1.2rem;">
+            <div class="event-section-title">Focus Areas</div>
+            <div class="focus-grid">
+              <span class="focus-tag">Precision Agriculture</span>
+              <span class="focus-tag">Search & Rescue</span>
+              <span class="focus-tag">Infrastructure Inspection</span>
+              <span class="focus-tag">Surveillance & Mapping</span>
+              <span class="focus-tag">Payload Delivery</span>
+              <span class="focus-tag">Open Innovation</span>
+            </div>
+          </div>
+
+          <div style="margin-top:1.2rem;">
+            <div class="event-section-title">Safety & Compliance (Mandatory)</div>
+            <ul class="detail-list">
+              <li>All drones must comply with DGCA guidelines for educational/hobbyist UAVs</li>
+              <li>Drones above 250g must carry valid DGCA registration — present at check-in</li>
+              <li>Safety officer inspects each drone before flight clearance</li>
+              <li>Flight arena cordoned with safety nets — no flying outside designated zone</li>
+              <li>Physical kill-switch must be functional and tested before slot</li>
+              <li>LiPo batteries in safe bags during transport; charge only in designated zones</li>
+              <li>Max altitude within arena: 30 metres</li>
+              <li>No FPV goggles during public demonstrations</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="event-section-title">Judging Scorecard</div>
+          <table class="score-table">
+            <thead><tr><th>Criterion</th><th>Max</th></tr></thead>
+            <tbody>
+              <tr><td>Mission Achievement & Flight Performance</td><td><span class="score-marks">25</span></td></tr>
+              <tr><td>Technical Design & Build Quality</td><td><span class="score-marks">20</span></td></tr>
+              <tr><td>Autonomy & Intelligence</td><td><span class="score-marks">20</span></td></tr>
+              <tr><td>Safety Compliance</td><td><span class="score-marks">15</span></td></tr>
+              <tr><td>Innovation & Application Relevance</td><td><span class="score-marks">10</span></td></tr>
+              <tr><td>Presentation & Q&A</td><td><span class="score-marks">10</span></td></tr>
+              <tr><td><strong>TOTAL</strong></td><td><span class="score-marks">100</span></td></tr>
+            </tbody>
+          </table>
+
+          <div class="callout callout-danger" style="margin-top:1rem;">
+            <span class="callout-icon">⚠️</span>
+            <span>Any drone crash posing risk to persons or property results in <strong>immediate disqualification</strong>. Do not modify drone hardware between inspection and demo slot.</span>
+          </div>
+
+          <div class="dos-donts" style="margin-top:1rem;">
+            <div class="do-card">
+              <h5>✅ Do's</h5>
+              <ul>
+                <li>Full pre-flight check before demo</li>
+                <li>Carry spare batteries & propellers</li>
+                <li>Inform safety officer of issues</li>
+              </ul>
+            </div>
+            <div class="dont-card">
+              <h5>❌ Don'ts</h5>
+              <ul>
+                <li>No FPV goggles in demo</li>
+                <li>No flight if kill-switch fails</li>
+                <li>No hardware mods after check-in</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GAME MANIA -->
+    <div class="event-card" id="gamemania">
+      <div class="event-card-header">
+        <div class="event-icon icon-purple">🎮</div>
+        <div class="event-card-title-group">
+          <div class="event-domain">AI Agents, Game Development & Intelligent Systems</div>
+          <h3>Game Mania</h3>
+          <div class="event-card-meta">
+            <span class="meta-chip">🏟️ Day 1</span>
+            <span class="meta-chip">👥 20 Teams</span>
+            <span class="meta-chip">⏱️ 12 min demo + 3 min Q&A</span>
+            <span class="meta-chip">👤 4 Members/Team</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-card-body">
+        <div>
+          <div class="event-section-title">Competition Overview</div>
+          <p>Build intelligent game environments, AI-driven game agents, or interactive simulation platforms. Focus is on how AI is integrated into gameplay — as an opponent, simulation engine, or adaptive system. This is a <em>development and demonstration</em> competition, not a competitive gaming event.</p>
+          <p style="margin-top:0.5rem;font-size:0.8rem;color:var(--text-muted);">Cross-department members from Design, Mechanical, Mathematics, or Electrical backgrounds are especially encouraged.</p>
+
+          <div style="margin-top:1.2rem;">
+            <div class="event-section-title">Focus Areas</div>
+            <div class="focus-grid">
+              <span class="focus-tag">AI Game Agents & NPCs</span>
+              <span class="focus-tag">Simulation Environments</span>
+              <span class="focus-tag">Educational Games with AI</span>
+              <span class="focus-tag">AI for Accessibility</span>
+              <span class="focus-tag">Generative AI in Games</span>
+              <span class="focus-tag">Open Innovation</span>
+            </div>
+          </div>
+
+          <div style="margin-top:1.2rem;">
+            <div class="event-section-title">Technical Requirements</div>
+            <ul class="detail-list">
+              <li>Game must be entirely built by the team. Asset packs and open-source engines (Unity, Godot, Unreal, Pygame) permitted</li>
+              <li>AI components must be custom-coded — plug-in LLMs without modification not permitted</li>
+              <li>Present on your own laptop — no cloud streaming</li>
+              <li>Minimum resolution: 720p. Standalone mode (no active internet) required</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="event-section-title">Judging Scorecard</div>
+          <table class="score-table">
+            <thead><tr><th>Criterion</th><th>Max</th></tr></thead>
+            <tbody>
+              <tr><td>AI Depth & Intelligence</td><td><span class="score-marks">30</span></td></tr>
+              <tr><td>Gameplay Innovation</td><td><span class="score-marks">20</span></td></tr>
+              <tr><td>Technical Execution</td><td><span class="score-marks">20</span></td></tr>
+              <tr><td>User Experience</td><td><span class="score-marks">15</span></td></tr>
+              <tr><td>Presentation & Q&A</td><td><span class="score-marks">15</span></td></tr>
+              <tr><td><strong>TOTAL</strong></td><td><span class="score-marks">100</span></td></tr>
+            </tbody>
+          </table>
+
+          <div class="callout callout-warn" style="margin-top:1rem;">
+            <span class="callout-icon">⚠️</span>
+            <span>Using pre-trained large language models as a plug-in <em>without modification</em> is <strong>not permitted</strong>. Custom AI implementation is required.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BUSINESS CONCLAVE PRELIMS -->
+<section class="section" id="conclave-prelims">
+  <div class="section-inner">
+
+    <div class="event-card">
+      <div class="event-card-header">
+        <div class="event-icon icon-gold">💡</div>
+        <div class="event-card-title-group">
+          <div class="event-domain">Flagship Entrepreneurship Platform</div>
+          <h3>AI Business Conclave — Preliminary Round</h3>
+          <div class="event-card-meta">
+            <span class="meta-chip">🏟️ Day 1</span>
+            <span class="meta-chip">👥 25 Teams</span>
+            <span class="meta-chip">⏱️ 12 min pitch + 3 min Q&A</span>
+            <span class="meta-chip">🏆 Top 10 advance to Finals</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-card-body">
+        <div>
+          <div class="event-section-title">Overview</div>
+          <p>The flagship entrepreneurship platform of Innovotsava 2026. Teams conceptualize, design, and pitch AI-powered business ventures addressing real-world problems across five defined domains. Top 10 teams advance to Day 2 Finals judged by industry leaders.</p>
+
+          <div style="margin-top:1.2rem;">
+            <div class="event-section-title">Official Competition Domains</div>
+            <div class="domain-grid" style="grid-template-columns:1fr;gap:0.5rem;">
+              <div class="domain-card"><div class="domain-num"># 01</div><div class="domain-name">AI for Healthcare & MedTech</div><div class="domain-desc">AI diagnostics, drug discovery, patient monitoring, telemedicine, assistive health tools</div></div>
+              <div class="domain-card"><div class="domain-num"># 02</div><div class="domain-name">AI for Sustainable Development & CleanTech</div><div class="domain-desc">Climate tech, energy optimization, smart agriculture, waste management, water conservation</div></div>
+              <div class="domain-card"><div class="domain-num"># 03</div><div class="domain-name">AI for Education & Skill Development</div><div class="domain-desc">Personalized learning, intelligent tutoring, career guidance, bridging rural education gaps</div></div>
+              <div class="domain-card"><div class="domain-num"># 04</div><div class="domain-name">AI for Fintech & Smart Economy</div><div class="domain-desc">Fraud detection, credit scoring, financial inclusion, micro-lending, automated trading</div></div>
+              <div class="domain-card"><div class="domain-num"># 05</div><div class="domain-name">AI for Smart Infrastructure & Urban Mobility</div><div class="domain-desc">Smart cities, traffic prediction, transport optimization, disaster response systems</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="event-section-title">Pitch Structure (12 min)</div>
+          <ul class="detail-list">
+            <li><strong style="color:var(--white);">Problem Statement</strong> — Define the real-world problem (1–2 min)</li>
+            <li><strong style="color:var(--white);">Solution Overview</strong> — The AI-powered solution and how it works (2–3 min)</li>
+            <li><strong style="color:var(--white);">Market & Impact</strong> — Target market, users, social/economic impact (2 min)</li>
+            <li><strong style="color:var(--white);">Business Model</strong> — Revenue streams, go-to-market strategy (2 min)</li>
+            <li><strong style="color:var(--white);">Technology Stack</strong> — AI/ML methods, data sources, architecture (2 min)</li>
+            <li><strong style="color:var(--white);">Traction & Roadmap</strong> — Current progress, prototype, future milestones (1 min)</li>
+          </ul>
+
+          <div style="margin-top:1.2rem;">
+            <div class="event-section-title">Judging Scorecard — Prelims</div>
+            <table class="score-table">
+              <thead><tr><th>Criterion</th><th>Max</th></tr></thead>
+              <tbody>
+                <tr><td>Problem Clarity & Relevance</td><td><span class="score-marks">15</span></td></tr>
+                <tr><td>AI Innovation & Technical Depth</td><td><span class="score-marks">25</span></td></tr>
+                <tr><td>Business Viability</td><td><span class="score-marks">20</span></td></tr>
+                <tr><td>Social / Environmental Impact</td><td><span class="score-marks">15</span></td></tr>
+                <tr><td>Presentation & Communication</td><td><span class="score-marks">15</span></td></tr>
+                <tr><td>Q&A Performance</td><td><span class="score-marks">10</span></td></tr>
+                <tr><td><strong>TOTAL</strong></td><td><span class="score-marks">100</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout callout-warn" style="margin-top:1rem;">
+            <span class="callout-icon">⚡</span>
+            <span>Top 10 teams advancing to Day 2 Finals must <strong>confirm attendance at the event desk by 04:30 PM on Day 1</strong>. Domain-wise quotas are not applied — best 10 overall scores qualify.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STUDENT PROJECT EXPO -->
+    <div class="event-card" id="expo">
+      <div class="event-card-header">
+        <div class="event-icon icon-green">🔬</div>
+        <div class="event-card-title-group">
+          <div class="event-domain">Open Innovation Showcase</div>
+          <h3>Student Project Expo</h3>
+          <div class="event-card-meta">
+            <span class="meta-chip">🏟️ Day 1 Afternoon</span>
+            <span class="meta-chip">👥 Top 10 Pre-Selected</span>
+            <span class="meta-chip">⏱️ 12 min demo + 3 min Q&A</span>
+            <span class="meta-chip">🏭 Judged by Industry</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-card-body">
+        <div>
+          <div class="event-section-title">Overview</div>
+          <p>A curated showcase of the most innovative student projects from across MITM. Open innovation — teams may present any original technology project solving a meaningful problem. Top 10 pre-screened teams present directly in front of industry dignitaries and company delegates.</p>
+
+          <div style="margin-top:1.2rem;">
+            <div class="event-section-title">Selection Process</div>
+            <ul class="detail-list">
+              <li><strong style="color:var(--white);">Stage 1:</strong> Online registration + 500-word project synopsis + 2-min video</li>
+              <li><strong style="color:var(--white);">Stage 2:</strong> Technical Committee reviews originality, feasibility & impact</li>
+              <li><strong style="color:var(--white);">Stage 3:</strong> Top 10 notified at least 2 weeks before event day</li>
+              <li><strong style="color:var(--white);">Stage 4:</strong> Selected teams confirm attendance and pay entry fee</li>
+              <li><strong style="color:var(--white);">Stage 5:</strong> Top 10 present to industry dignitaries on Day 1 afternoon</li>
+            </ul>
+          </div>
+
+          <div class="callout callout-info" style="margin-top:1rem;">
+            <span class="callout-icon">🏭</span>
+            <span>The judging panel consists exclusively of <strong>industry delegates and company representatives</strong> — a unique opportunity for direct feedback and potential mentorship or internship opportunities.</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="event-section-title">Presentation Format</div>
+          <ul class="detail-list">
+            <li>12 minutes for demonstration and presentation</li>
+            <li>3 minutes for Q&A with industry dignitaries</li>
+            <li>Slides, live demo, or working prototype — any combination acceptable</li>
+            <li>Teams must set up in designated Expo arena before 13:45</li>
+          </ul>
+
+          <div style="margin-top:1.2rem;">
+            <div class="event-section-title">Judging Scorecard</div>
+            <table class="score-table">
+              <thead><tr><th>Criterion</th><th>Max</th></tr></thead>
+              <tbody>
+                <tr><td>Innovation & Originality</td><td><span class="score-marks">25</span></td></tr>
+                <tr><td>Technical Merit & Complexity</td><td><span class="score-marks">25</span></td></tr>
+                <tr><td>Feasibility & Real-World Applicability</td><td><span class="score-marks">20</span></td></tr>
+                <tr><td>Impact & Relevance</td><td><span class="score-marks">15</span></td></tr>
+                <tr><td>Presentation & Communication</td><td><span class="score-marks">15</span></td></tr>
+                <tr><td><strong>TOTAL</strong></td><td><span class="score-marks">100</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- DAY 2 SCHEDULE -->
+<section class="section section-alt2" id="day2">
+  <div class="section-inner">
+    <div class="section-label">§ 08 — Day 2</div>
+    <h2 class="section-title">Day 2 — <span>AI Conclave</span></h2>
+    <p class="section-desc">5 June 2026 | Registration/Check-in opens 08:30 AM</p>
+
+    <div class="day-header">
+      <div class="day-badge" style="background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">D2</div>
+      <div class="day-info">
+        <h3>AI Conclave</h3>
+        <p>Industry Demos, Finals, NGO Sessions, Cultural Programme & Valedictory</p>
+      </div>
+      <div class="day-tag" style="background:rgba(139,92,246,0.1);border-color:rgba(139,92,246,0.25);color:#c4b5fd;">5 JUNE 2026</div>
+    </div>
+
+    <table class="schedule-table">
+      <thead><tr><th>Time</th><th>Activity</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="time-cell">08:30 – 09:15</td>
+          <td class="activity-cell">☕ Arrival, Check-in & Networking Coffee</td>
+        </tr>
+        <tr>
+          <td class="time-cell">09:15 – 09:45</td>
+          <td class="activity-cell">🎤 Inauguration Ceremony — Day 2 Opening, Dignitaries' Welcome, Lighting of the Lamp</td>
+        </tr>
+        <tr>
+          <td class="time-cell">09:45 – 13:05</td>
+          <td class="activity-cell">🏭 Company AI Product Demonstrations — 10 companies × 20 min (15 min demo + 5 min Q&A)</td>
+        </tr>
+        <tr>
+          <td class="time-cell">13:05 – 14:00</td>
+          <td class="activity-cell">🍽️ Lunch Break</td>
+        </tr>
+        <tr>
+          <td class="time-cell">14:00 – 14:45</td>
+          <td class="activity-cell">🎙️ Industry Keynote Speeches — 2–3 keynotes from top business leaders</td>
+        </tr>
+        <tr>
+          <td class="time-cell">14:45 – 17:15</td>
+          <td class="activity-cell">🏆 AI Business Conclave Finals — Top 10 teams × 15 min (12+3 format) · Main stage</td>
+        </tr>
+        <tr>
+          <td class="time-cell">17:15 – 17:55</td>
+          <td class="activity-cell">🌍 NGO Sessions — 2 NGOs × 20 min (impact stories & calls to action)</td>
+        </tr>
+        <tr>
+          <td class="time-cell">17:55 – 18:55</td>
+          <td class="activity-cell">🎭 Cultural Programme — Dance, music, spoken word & theatrical performances</td>
+        </tr>
+        <tr>
+          <td class="time-cell">18:55 – 19:30</td>
+          <td class="activity-cell">🏅 Valedictory Ceremony — Prize Distribution (all competitions) & Closing Address</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-warn">
+      <span class="callout-icon">📢</span>
+      <span>Business Conclave finalists (top 10 from Day 1) must report to the backstage area by <strong>14:30</strong>. Day 2 is open to all registered participants, company delegates, and invited guests.</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- COMPANY DEMOS + CONCLAVE FINALS -->
+<section class="section" id="demos">
+  <div class="section-inner">
+    <div class="section-label">§ 09 — Day 2 Events</div>
+    <h2 class="section-title">Company Demos & <span>Conclave Finals</span></h2>
+
+    <div class="guide-grid" style="margin-bottom:2.5rem;">
+      <div class="guide-card">
+        <div class="guide-card-title"><div class="guide-icon">🏭</div> Company AI Demonstrations</div>
+        <p style="font-size:0.85rem;color:var(--text-dim);margin-bottom:0.75rem;">10 technology companies take the main stage at APJ Abdul Kalam Open Air Theatre to showcase cutting-edge AI products. Students get direct exposure to where industry AI development is headed.</p>
+        <ul class="detail-list">
+          <li><strong style="color:var(--white);">Format:</strong> 15 min demo + 5 min Q&A (20 min total — hard cutoff)</li>
+          <li><strong style="color:var(--white);">Time:</strong> 09:45 AM – 01:05 PM</li>
+          <li>Companies submit AV requirements 7 days before event</li>
+          <li>Sound check with each company: 08:30–09:15 AM on Day 2</li>
+          <li>Live demos may use dedicated 5G node (local backup recommended)</li>
+          <li>Companies may set up stalls in expo area during breaks</li>
+        </ul>
+      </div>
+
+      <div class="guide-card">
+        <div class="guide-card-title"><div class="guide-icon">🎙️</div> Industry Keynote Speeches</div>
+        <p style="font-size:0.85rem;color:var(--text-dim);margin-bottom:0.75rem;">2–3 senior industry leaders deliver inspirational and informative addresses. Speakers typically represent founders, CTOs, or senior executives from AI and tech companies.</p>
+        <ul class="detail-list">
+          <li><strong style="color:var(--white);">Time:</strong> 14:00 – 14:45 (Day 2)</li>
+          <li>Each keynote: 15–20 minutes</li>
+          <li>No formal Q&A — audience interaction during networking breaks</li>
+          <li>AV slides must be submitted 3 days before event</li>
+          <li>VIP Green Room access from arrival</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CONCLAVE FINALS -->
+    <div class="event-card" id="conclave-finals">
+      <div class="event-card-header">
+        <div class="event-icon icon-gold">🏆</div>
+        <div class="event-card-title-group">
+          <div class="event-domain">Flagship Competition · Main Stage</div>
+          <h3>AI Business Conclave — Finals</h3>
+          <div class="event-card-meta">
+            <span class="meta-chip">🏟️ Day 2 — Main Stage</span>
+            <span class="meta-chip">👥 Top 10 from Day 1</span>
+            <span class="meta-chip">⏱️ 12 min pitch + 3 min Q&A</span>
+            <span class="meta-chip">👨‍💼 Industry Leader Judges</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-card-body">
+        <div>
+          <div class="event-section-title">Finals Overview</div>
+          <p>The highest-stakes session of Innovotsava 2026. Top 10 teams pitch to a distinguished panel of industry leaders, investors, and domain experts on the main stage. Audience is the full Day 2 crowd of up to 3,000 — presentations must be clear to a non-technical audience.</p>
+
+          <div style="margin-top:1.2rem;">
+            <div class="event-section-title">What Changes from Prelims</div>
+            <ul class="detail-list">
+              <li>Full Day 2 audience (3,000 max capacity) — present for non-technical audience too</li>
+              <li>Judge panel: industry executives and domain leaders (not faculty)</li>
+              <li>Incorporate feedback received informally after Day 1 where possible</li>
+              <li>2-minute setup window before each team's slot; AV must be pre-loaded</li>
+            </ul>
+          </div>
+
+          <div style="margin-top:1.2rem;">
+            <div class="event-section-title">Prize Structure</div>
+            <div class="prize-grid">
+              <div class="prize-card prize-1">
+                <span class="prize-medal">🥇</span>
+                <div class="prize-pos">1st Place</div>
+                <div class="prize-detail">Winner Trophy + Cash Prize + Industry Mentorship + Certificate of Excellence</div>
+              </div>
+              <div class="prize-card prize-2">
+                <span class="prize-medal">🥈</span>
+                <div class="prize-pos">2nd Place</div>
+                <div class="prize-detail">Runner-Up Trophy + Cash Prize + Certificate of Merit</div>
+              </div>
+              <div class="prize-card prize-3">
+                <span class="prize-medal">🥉</span>
+                <div class="prize-pos">3rd Place</div>
+                <div class="prize-detail">2nd Runner-Up + Cash Prize + Certificate of Merit</div>
+              </div>
+            </div>
+            <p style="font-size:0.8rem;color:var(--text-muted);margin-top:0.5rem;">All Finalists: Finalists' Certificate + Listed in Innovotsava 2026 official publication. Exact prize amounts confirmed by Core Committee via official channels.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="event-section-title">Judging Scorecard — Finals</div>
+          <table class="score-table">
+            <thead><tr><th>Criterion</th><th>Max</th></tr></thead>
+            <tbody>
+              <tr><td>Problem Clarity & Relevance</td><td><span class="score-marks">10</span></td></tr>
+              <tr><td>AI Innovation & Technical Depth</td><td><span class="score-marks">25</span></td></tr>
+              <tr><td>Business Viability & Model</td><td><span class="score-marks">25</span></td></tr>
+              <tr><td>Social / Environmental Impact</td><td><span class="score-marks">15</span></td></tr>
+              <tr><td>Scalability & Roadmap</td><td><span class="score-marks">10</span></td></tr>
+              <tr><td>Presentation & Stage Presence</td><td><span class="score-marks">10</span></td></tr>
+              <tr><td>Q&A Performance</td><td><span class="score-marks">5</span></td></tr>
+              <tr><td><strong>TOTAL</strong></td><td><span class="score-marks">100</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- NGO + CULTURAL -->
+<section class="section section-alt" id="ngo">
+  <div class="section-inner">
+    <div class="section-label">§ 10 — Social Impact & Culture</div>
+    <h2 class="section-title">NGO Sessions & <span>Cultural Programme</span></h2>
+
+    <div class="guide-grid" style="margin-bottom:2rem;">
+      <div class="guide-card">
+        <div class="guide-card-title"><div class="guide-icon">🌍</div> NGO Sessions</div>
+        <p style="font-size:0.85rem;color:var(--text-dim);margin-bottom:0.75rem;">Two NGOs participate across both days with different talk content each day. Day 1 introduces the NGO's mission; Day 2 goes deeper into impact and calls to action.</p>
+        <table class="score-table">
+          <thead><tr><th>Day</th><th>Duration</th><th>Focus</th></tr></thead>
+          <tbody>
+            <tr><td>Day 1</td><td>2 × 20 min</td><td style="font-size:0.8rem;">NGO introduction, mission overview, problem they address</td></tr>
+            <tr><td>Day 2</td><td>2 × 20 min</td><td style="font-size:0.8rem;">Impact stories, outcomes, how students can engage or volunteer</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:0.8rem;color:var(--text-muted);margin-top:0.75rem;">Volunteer sign-up sheets available at each NGO's desk. Interact with NGO representatives during Networking Session (Day 1) and after Day 2 NGO sessions.</p>
+      </div>
+
+      <div class="guide-card" id="cultural">
+        <div class="guide-card-title"><div class="guide-icon">🎭</div> Cultural Programme & Valedictory</div>
+        <ul class="detail-list" style="margin-bottom:0.75rem;">
+          <li><strong style="color:var(--white);">Cultural Programme (17:55–18:55):</strong> 1-hour showcase of student performing arts — dance, music, spoken word, theatrical performances</li>
+          <li>Performers must rehearse at the venue on Day 2 morning</li>
+          <li><strong style="color:var(--white);">Valedictory (18:55–19:30):</strong> Prize distribution for all competitions</li>
+          <li>Certificates for all finalists and special mention awardees</li>
+          <li>Closing address by Chief Guest</li>
+          <li>Vote of thanks by Stack Forge Club Core Committee</li>
+          <li>Official group photograph of all awardees and dignitaries</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- GUIDELINES -->
+<section class="section" id="guidelines">
+  <div class="section-inner">
+    <div class="section-label">§ 11 — Participation</div>
+    <h2 class="section-title">Participant <span>Guidelines</span></h2>
+    <p class="section-desc">Everything you need to know to register, show up, and compete successfully.</p>
+
+    <div class="guide-grid" style="margin-bottom:2rem;">
+      <div class="guide-card">
+        <div class="guide-card-title"><div class="guide-icon">📝</div> Registration & Eligibility</div>
+        <ul class="detail-list">
+          <li>Register on the official Innovotsava 2026 portal before deadline</li>
+          <li>Late registrations will not be accepted under any circumstance</li>
+          <li>Exactly 4 members per team with at least 1 from a different department</li>
+          <li>A student may not register in more than one competition team</li>
+          <li>All members must be currently enrolled students of MITM</li>
+          <li>Registration confirmed only upon successful payment (where applicable)</li>
+        </ul>
+      </div>
+
+      <div class="guide-card">
+        <div class="guide-card-title"><div class="guide-icon">👔</div> On-Site Conduct</div>
+        <ul class="detail-list">
+          <li>Report to assigned track/arena at least 45 minutes before your slot</li>
+          <li>Carry valid college ID and confirmation email (printed or digital) at all times</li>
+          <li>Dress code: Business casual. No sleeveless tops, shorts, or open footwear in presentation arenas</li>
+          <li>Mobile phones on silent mode during presentations and judging</li>
+          <li>No loud music, aggressive behavior, or interference with other teams</li>
+        </ul>
+      </div>
+
+      <div class="guide-card">
+        <div class="guide-card-title"><div class="guide-icon">💼</div> Equipment & IP</div>
+        <ul class="detail-list">
+          <li>Participants responsible for own equipment — MITM not liable for damage or theft</li>
+          <li>All work must be original — plagiarism is strictly prohibited</li>
+          <li>By participating, teams grant Innovotsava 2026 rights to photograph and document for official publications</li>
+          <li>Teams retain full intellectual property rights over their submitted work</li>
+        </ul>
+      </div>
+
+      <div class="guide-card">
+        <div class="guide-card-title"><div class="guide-icon">👨‍🏫</div> Faculty Advisor</div>
+        <ul class="detail-list">
+          <li>Every team assigned a faculty advisor post-registration</li>
+          <li>Advisor guides but does not contribute to or co-author the work</li>
+          <li>Meet your advisor at least twice before Event Day for progress verification</li>
+          <li>Advisor sign-off form must be submitted at Day 1 check-in</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-sep"><div class="section-sep-line"></div><span class="section-sep-text">Submission Deadlines</span><div class="section-sep-line"></div></div>
+
+    <table class="schedule-table">
+      <thead><tr><th>Submission Item</th><th>Deadline</th><th>Where to Submit</th></tr></thead>
+      <tbody>
+        <tr><td>Team Registration + Initial Abstract</td><td class="time-cell">TBA</td><td>Official Portal</td></tr>
+        <tr><td>Project Expo Synopsis (500 words + 2 min video)</td><td class="time-cell">TBA</td><td>Official Portal</td></tr>
+        <tr><td>Business Conclave Pitch Deck (PDF)</td><td class="time-cell">TBA</td><td>Official Portal</td></tr>
+        <tr><td>Drone DGCA Compliance Documentation</td><td class="time-cell">TBA</td><td>Email to Tech Team</td></tr>
+        <tr><td>Faculty Advisor Sign-Off Form</td><td class="time-cell">Day 1 Check-in</td><td>Registration Desk</td></tr>
+        <tr><td>Company AV Requirements</td><td class="time-cell">7 days before event</td><td>Email to Logistics Team</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-warn" style="margin-top:1rem;">
+      <span class="callout-icon">📅</span>
+      <span>Specific submission deadlines marked <strong>TBA</strong> will be communicated by the organizing team via the official portal and social media channels. Watch official channels closely.</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- JUDGING FRAMEWORK -->
+<section class="section section-alt" id="judging">
+  <div class="section-inner">
+    <div class="section-label">§ 12 — Judging</div>
+    <h2 class="section-title">Judging Framework <span>& Ethics</span></h2>
+
+    <table class="judge-table" style="margin-bottom:2rem;">
+      <thead><tr><th>Event</th><th>Judges/Panel</th><th>Judge Profile</th></tr></thead>
+      <tbody>
+        <tr><td>Rise of Autobots</td><td>3 per batch</td><td>Robotics faculty, industry engineers</td></tr>
+        <tr><td>Drone Fare</td><td>3 per batch</td><td>UAV experts, DGCA-aware professionals</td></tr>
+        <tr><td>Game Mania</td><td>3 per batch</td><td>Game developers, AI researchers</td></tr>
+        <tr><td>Business Conclave Prelims</td><td>3 per batch</td><td>Entrepreneurs, business faculty</td></tr>
+        <tr><td>Business Conclave Finals</td><td>4–5</td><td>Industry executives, investors</td></tr>
+        <tr><td>Student Project Expo</td><td>3–5</td><td>Company delegates, industry dignitaries</td></tr>
+      </tbody>
+    </table>
+
+    <div class="guide-grid">
+      <div class="guide-card">
+        <div class="guide-card-title"><div class="guide-icon">⚖️</div> Process & Tiebreakers</div>
+        <ul class="detail-list">
+          <li>All judges briefed on scoring rubric before events begin</li>
+          <li>Scores recorded on standardized scoresheets by Technical Team</li>
+          <li>Results not shared until official announcement</li>
+          <li>In a tie: Technical Complexity / AI Innovation criterion is used as tiebreaker</li>
+          <li>Judges may confer after all presentations in a domain are complete</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title"><div class="guide-icon">🛡️</div> Ethics & Appeals</div>
+        <ul class="detail-list">
+          <li>Judges with conflicts of interest must declare and recuse themselves</li>
+          <li>Reserve judge available for each panel</li>
+          <li>Results are final once announced — no individual score appeals</li>
+          <li>Procedural grievances may be submitted in writing within 30 minutes of announcement</li>
+          <li>Core Committee reviews procedural grievances within 24 hours</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SPONSORS -->
+<section class="section" id="sponsors">
+  <div class="section-inner">
+    <div class="section-label">§ 13 — Partnership</div>
+    <h2 class="section-title">Sponsorship <span>Tiers</span></h2>
+
+    <div class="sponsor-grid">
+      <div class="sponsor-tier tier-1">
+        <div class="tier-title">🥇 Title Sponsor</div>
+        <div class="tier-invest">Premier Investment</div>
+        <ul class="detail-list">
+          <li>Event naming rights</li>
+          <li>Prime stage branding</li>
+          <li>Keynote slot</li>
+          <li>Dedicated booth</li>
+          <li>All collateral visibility</li>
+          <li>5 delegate passes</li>
+          <li>Full media coverage</li>
+        </ul>
+      </div>
+      <div class="sponsor-tier tier-2">
+        <div class="tier-title">🥈 Co-Sponsor</div>
+        <div class="tier-invest">Major Investment</div>
+        <ul class="detail-list">
+          <li>Stage mention</li>
+          <li>Banner placement</li>
+          <li>Dedicated booth</li>
+          <li>3 delegate passes</li>
+          <li>Social media features</li>
+          <li>Brochure full-page ad</li>
+        </ul>
+      </div>
+      <div class="sponsor-tier tier-3">
+        <div class="tier-title">🥉 Associate Sponsor</div>
+        <div class="tier-invest">Standard Investment</div>
+        <ul class="detail-list">
+          <li>Logo on all collateral</li>
+          <li>Stall at venue</li>
+          <li>2 delegate passes</li>
+          <li>Social media mention</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout callout-info" style="margin-top:1.5rem;">
+      <span class="callout-icon">🤝</span>
+      <span><strong>In-Kind Partnerships:</strong> Technology provision, cloud credits, software licenses, and professional services are welcome. In-kind sponsors receive acknowledgement equivalent to Associate tier minimum. Contact the Marketing & PR Department via innovotsava2026.mitm.ac.in.</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CODE OF CONDUCT -->
+<section class="section section-alt" id="conduct">
+  <div class="section-inner">
+    <div class="section-label">§ 14 — Conduct</div>
+    <h2 class="section-title">Code of Conduct & <span>Policies</span></h2>
+
+    <div class="callout callout-info" style="margin-bottom:2rem;">
+      <span class="callout-icon">📌</span>
+      <span>All participants, volunteers, company representatives, and guests are expected to adhere to this code. Violations result in disqualification and removal from the event.</span>
+    </div>
+
+    <div class="guide-grid" style="margin-bottom:2rem;">
+      <div class="guide-card">
+        <div class="guide-card-title"><div class="guide-icon">✅</div> Expected Conduct</div>
+        <ul class="detail-list">
+          <li>Treat all individuals with respect regardless of gender, department, or institution</li>
+          <li>Engage in fair, honest competition — present only original work</li>
+          <li>Follow all instructions from organizing staff, marshals, and safety officers</li>
+          <li>Maintain cleanliness and orderliness in all arenas and common spaces</li>
+          <li>Represent MITM and the Stack Forge Club with professionalism</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title"><div class="guide-icon">🚫</div> Disqualification Conditions</div>
+        <ul class="detail-list">
+          <li>Submitting or presenting plagiarized work as original</li>
+          <li>Attempting to bribe or make unsolicited contact with judges</li>
+          <li>Physical altercation, threatening behavior, or verbal abuse</li>
+          <li>Tampering with another team's equipment or presentation</li>
+          <li>Violating drone safety protocols</li>
+          <li>Using AI generation tools for content claimed as original team work (Expo and Business Conclave)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout callout-warn">
+      <span class="callout-icon">📋</span>
+      <span><strong>Appeals:</strong> Disqualification decisions by the Core Committee are final. Written appeal may be submitted within 1 hour of the decision, reviewed by 3 Core Committee members and the Faculty Coordinator. Violations may be reported to any Core Committee member or at the main registration desk grievance point.</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EMERGENCY -->
+<section class="section" id="emergency">
+  <div class="section-inner">
+    <div class="section-label">§ 15 — Safety</div>
+    <h2 class="section-title">Emergency Protocols <span>& Safety</span></h2>
+
+    <div class="callout callout-danger" style="margin-bottom:2rem;">
+      <span class="callout-icon">🚨</span>
+      <span>In any emergency — medical, fire, or security — contact the nearest marshal immediately. First-aid stations are located at the main venue entrance and near the Drone Fare arena.</span>
+    </div>
+
+    <div class="emergency-grid">
+      <div class="emergency-card">
+        <h4>🏥 Medical Emergencies</h4>
+        <ul class="detail-list">
+          <li>First-aid station at main venue entrance & near Drone Fare arena</li>
+          <li>Trained first-aid responders on-site full duration of both days</li>
+          <li>Contact nearest marshal immediately for serious emergencies</li>
+          <li>Do not move the individual unless directed by medical personnel</li>
+          <li>Nearest hospital: <em style="color:var(--text-muted);">To be confirmed by organizers</em></li>
+        </ul>
+      </div>
+
+      <div class="emergency-card">
+        <h4>🔥 Fire & Evacuation</h4>
+        <ul class="detail-list">
+          <li>Fire exits clearly marked — must not be obstructed at any time</li>
+          <li>On fire alarm: evacuate immediately via nearest marked exit</li>
+          <li>Assembly point: Designated open ground (marked on Day 1 briefing map)</li>
+          <li>Do not attempt to retrieve equipment during evacuation</li>
+        </ul>
+      </div>
+
+      <div class="emergency-card">
+        <h4>⚡ Electrical Safety</h4>
+        <ul class="detail-list">
+          <li>Only authorized personnel handle stage electrical equipment, PA systems, and lighting</li>
+          <li>Participants may not use venue power outlets without Logistics Team approval</li>
+          <li>Drone battery charging only at designated LiPo-safe charging stations</li>
+        </ul>
+      </div>
+
+      <div class="emergency-card">
+        <h4>👥 Crowd Management</h4>
+        <ul class="detail-list">
+          <li>Max capacity of Open Air Theatre: 2,500 — strictly enforced</li>
+          <li>Volunteer marshals stationed at all entry/exit points</li>
+          <li>Barricaded audience zones in effect during Drone Fare flight demos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section class="section section-alt" id="faq">
+  <div class="section-inner">
+    <div class="section-label">§ 16 — FAQs</div>
+    <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+    <p class="section-desc">Answers to the most common participant queries about Innovotsava 2026.</p>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can I register in more than one competition? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">No. A student may not be part of more than one competition team across all events at Innovotsava 2026. Each student can only register in a single competition category.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What is the cross-departmental requirement? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Every team of 4 must include at least 1 member from a department other than their primary department. This rule applies to all competitions — Robotics, Drone Fare, Game Mania, Business Conclave, and Student Project Expo.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Who is eligible to participate? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">All team members must be currently enrolled students of Maharaja Institute of Technology Mysore (MITM). The event is internal to MITM students only; external participants from other colleges are not eligible for the competitions.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">When are the Day 1 competition results announced? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Results for Rise of Autobots, Drone Fare, and Game Mania are announced during the Networking Session at 5:00 PM on Day 1. Top 10 Business Conclave teams advancing to Finals are also announced at this time. Formal prize distribution happens at the Day 2 Valedictory Ceremony.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Is accommodation provided for outstation participants? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Outstation participants are responsible for their own accommodation. MITM Guest House bookings may be facilitated on prior request to the organizing committee, subject to availability. Transportation from the Manipal bus stand to MITM campus will be arranged on both event days.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Is food provided at the event? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Yes. Complimentary lunch is provided to all registered participants on both days. Refreshment stalls are operational throughout the day. If you have dietary restrictions, please notify the organizing team at registration.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What documents do I need to bring on Day 1? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Bring your valid college ID, your registration confirmation email (digital or printed), and the Faculty Advisor Sign-Off Form. Drone participants must additionally carry DGCA-compliant documentation for their UAV. Report at least 45 minutes before your scheduled slot.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Will certificates be provided? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Certificates are distributed at the Valedictory Ceremony to all finalists and special mention awardees across all competitions. Business Conclave finalists also receive a Finalists' Certificate and will be listed in the Innovotsava 2026 official publication.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can I switch my faculty advisor? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Teams may not switch advisors once assigned without written approval from the Core Committee. The advisor is assigned by the Technical Team during the registration confirmation phase.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do the Business Conclave Finals teams need to prepare new slides? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Teams should incorporate feedback received informally after their Day 1 presentation where possible. The audience on Day 2 includes the full crowd of 3,000, so presentations must be clear to a non-technical audience as well. A 2-minute setup window is provided before each team's slot.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="section-inner">
+    <div class="section-label">§ 17 — Contact</div>
+    <h2 class="section-title">Contact & <span>Support</span></h2>
+    <p class="section-desc">Reach the organizing team for any queries, emergencies, or support during the event.</p>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-avatar">👑</div>
+        <div>
+          <div class="contact-name">Nishanth S & Pranamya V</div>
+          <div class="contact-role">Event Core Committee Heads</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-avatar">🎯</div>
+        <div>
+          <div class="contact-name">Balaram B, Aditya D, Monisha Vinayak C</div>
+          <div class="contact-role">Club Heads</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-avatar">🎓</div>
+        <div>
+          <div class="contact-name">Dr. Murali S</div>
+          <div class="contact-role">Principal, MITM — Patron & Mentor</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-avatar">📚</div>
+        <div>
+          <div class="contact-name">Dr. Shivamurthy R C</div>
+          <div class="contact-role">Head of Department, CSE — Guidance & Event Convenor</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-avatar">👩‍🏫</div>
+        <div>
+          <div class="contact-name">Prof. Prakruthi S</div>
+          <div class="contact-role">Faculty Head</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-avatar">🌐</div>
+        <div>
+          <div class="contact-name">innovotsava2026.mitm.ac.in</div>
+          <div class="contact-role">Official Event Website & Registration Portal</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-info" style="margin-top:1.5rem;">
+      <span class="callout-icon">📍</span>
+      <span><strong>On-Site Help Desk:</strong> Main registration desk serves as the grievance point-of-contact. Violations, concerns, and emergencies may be reported to any Core Committee member or at the help desk throughout both event days.</span>
+    </div>
+
+    <div class="callout callout-warn" style="margin-top:0.75rem;">
+      <span class="callout-icon">💼</span>
+      <span><strong>Sponsorship Enquiries:</strong> Direct all sponsorship and partnership queries to the Marketing & PR Department through the official event contact at innovotsava2026.mitm.ac.in.</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CLOSING -->
+<div class="closing">
+  <h2>See You at Innovotsava 2026</h2>
+  <p>Two days. Five competitions. Ten industry AI demonstrations. One unforgettable experience. We can't wait to see what you build.</p>
+
+  <div class="closing-quote">
+    "Innovation distinguishes between a leader and a follower. Come to Innovotsava 2026 ready to lead."
+  </div>
+
+  <div style="margin-bottom:2rem;">
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.75rem;margin-bottom:1.5rem;">
+      <span class="event-pill">📅 4–5 June 2026</span>
+      <span class="event-pill">📍 APJ Abdul Kalam OAT, MITM Mysore</span>
+      <span class="event-pill">👥 3,000 Max Capacity</span>
+    </div>
+  </div>
+
+  <div class="closing-website">innovotsava2026.mitm.ac.in</div>
+  <div style="margin-top:0.5rem;font-size:0.8rem;color:var(--text-muted);font-family:'JetBrains Mono',monospace;">Stack Forge Club · Dept. of CSE · Maharaja Institute of Technology Mysore</div>
+  <div style="margin-top:2rem;font-size:0.75rem;color:var(--text-muted);">© 2026 Innovotsava — Official Event Handbook · Confidential for Organizers, Participants & Partners</div>
+</div>
+
+<script>
+function toggleFaq(el) {
+  const item = el.parentElement;
+  item.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
