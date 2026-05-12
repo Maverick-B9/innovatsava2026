@@ -259,7 +259,8 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.6rem;
-    animation: fadeInUp 0.8s ease 0.6s both;
+    margin-bottom: 2.5rem;
+    animation: fadeInUp 0.8s ease 0.4s both;
   }
 
   .event-pill {
@@ -270,12 +271,25 @@
     font-size: 0.78rem;
     color: var(--text-dim);
     font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s, background 0.2s, border-color 0.2s;
+  }
+
+  .event-pill:hover {
+    transform: translateY(-2px);
+    background: rgba(255,255,255,0.08);
   }
 
   .event-pill.highlight {
     background: rgba(59,130,246,0.1);
     border-color: rgba(59,130,246,0.3);
     color: #93c5fd;
+  }
+
+  .event-pill.highlight:hover {
+    background: rgba(59,130,246,0.15);
+    border-color: rgba(59,130,246,0.4);
   }
 
   /* ─── SECTION STRUCTURE ─── */
@@ -594,9 +608,17 @@
     gap: 2rem;
   }
 
-  @media(max-width: 640px) {
+  @media(max-width: 768px) {
     .event-card-body { grid-template-columns: 1fr; }
-    nav { display: none; }
+    nav { padding: 0 1rem; }
+    .nav-logo { display: none; }
+    .nav-links { overflow-x: auto; justify-content: flex-start; width: 100%; -webkit-overflow-scrolling: touch; }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .section-inner { padding: 0 1.2rem; }
+    .hero { padding: 100px 1.2rem 3rem; }
+    .schedule-table, .score-table, .judge-table { display: block; overflow-x: auto; white-space: nowrap; }
+    .event-card-header, .event-card-body, .day-header { padding: 1.5rem 1.2rem; }
+    .overview-card, .guide-card, .contact-card { padding: 1.2rem 1rem; }
   }
 
   .event-section-title {
@@ -1306,6 +1328,18 @@
   <div class="hero-year">J U N E &nbsp;·&nbsp; 0 4 – 0 5 &nbsp;·&nbsp; 2 0 2 6</div>
   <p class="hero-sub">Innovation at its Best — A convergence of competitive technology, applied research, entrepreneurship, and cultural celebration.</p>
 
+  <div class="hero-events">
+    <a href="#autobots" class="event-pill highlight">🤖 Robotics Competition</a>
+    <a href="#drone" class="event-pill highlight">🚁 UAV Drone Competition</a>
+    <a href="#gamemania" class="event-pill highlight">🎮 AI Gaming Competition</a>
+    <a href="#conclave-prelims" class="event-pill highlight">💡 Business Conclave</a>
+    <a href="#expo" class="event-pill highlight">🔬 Student Project Expo</a>
+    <a href="#demos" class="event-pill">🏭 10 Company AI Demos</a>
+    <a href="#keynote" class="event-pill">🎤 Keynote Speeches</a>
+    <a href="#ngo" class="event-pill">🌍 NGO Sessions</a>
+    <a href="#cultural" class="event-pill">🎭 Cultural Programme</a>
+  </div>
+
   <a href="https://forms.gle/czSNtNMVkFj6h6jK9" target="_blank" class="register-btn">Register Here</a>
 
   <div class="hero-meta">
@@ -1328,18 +1362,6 @@
       <span class="hero-meta-label">Format</span>
       <span class="hero-meta-value">Two-Day Event</span>
     </div>
-  </div>
-
-  <div class="hero-events">
-    <span class="event-pill highlight">🤖 Robotics Competition</span>
-    <span class="event-pill highlight">🚁 UAV Drone Competition</span>
-    <span class="event-pill highlight">🎮 AI Gaming Competition</span>
-    <span class="event-pill highlight">💡 Business Conclave</span>
-    <span class="event-pill highlight">🔬 Student Project Expo</span>
-    <span class="event-pill">🏭 10 Company AI Demos</span>
-    <span class="event-pill">🎤 Keynote Speeches</span>
-    <span class="event-pill">🌍 NGO Sessions</span>
-    <span class="event-pill">🎭 Cultural Programme</span>
   </div>
 </section>
 
