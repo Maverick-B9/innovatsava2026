@@ -218,8 +218,9 @@
       line-height: 1.1;
       margin-bottom: 0.5rem;
       animation: fadeInUp 0.8s ease 0.2s both;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
+      word-wrap: normal;
+      overflow-wrap: normal;
+      word-break: keep-all;
     }
 
     .hero h1 .line1 {
@@ -683,6 +684,7 @@
 
       nav {
         padding: 0 1rem;
+        height: 50px;
       }
 
       .nav-logo {
@@ -693,7 +695,13 @@
         overflow-x: auto;
         justify-content: flex-start;
         width: 100%;
+        gap: 0.1rem;
         -webkit-overflow-scrolling: touch;
+      }
+
+      .nav-links a {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.72rem;
       }
 
       .nav-links::-webkit-scrollbar {
@@ -701,19 +709,49 @@
       }
 
       .section-inner {
-        padding: 0 1.2rem;
+        padding: 0 1.25rem;
       }
 
       .hero {
-        padding: 100px 1.2rem 3rem;
+        padding: 80px 1.25rem 3rem;
       }
-      
-      .hero h1 .line1, .hero h1 .line2 {
-        display: block;
-      }
-      
+
       .hero h1 {
-        font-size: clamp(1.8rem, 10vw, 3.5rem);
+        font-size: clamp(1.5rem, 9vw, 4rem);
+      }
+
+      .hero-year {
+        font-size: 0.9rem;
+        letter-spacing: 0.2em;
+      }
+
+      .hero-sub {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+      }
+
+      .hero-meta {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem 1rem;
+      }
+
+      .hero-divider {
+        display: none;
+      }
+
+      .hero-meta-item {
+        align-items: center;
+        text-align: center;
+      }
+
+      .hero-events {
+        gap: 0.4rem;
+      }
+
+      .event-pill {
+        font-size: 0.72rem;
+        padding: 0.3rem 0.75rem;
       }
 
       .schedule-table,
@@ -722,18 +760,83 @@
         display: block;
         overflow-x: auto;
         white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.02);
       }
 
       .event-card-header,
       .event-card-body,
       .day-header {
-        padding: 1.5rem 1.2rem;
+        padding: 1.5rem 1.25rem;
       }
 
       .overview-card,
       .guide-card,
-      .contact-card {
-        padding: 1.2rem 1rem;
+      .contact-card,
+      .emergency-card {
+        padding: 1.25rem 1.1rem;
+      }
+
+      .toc-grid,
+      .overview-grid,
+      .domain-grid,
+      .guide-grid,
+      .contact-grid,
+      .emergency-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .welcome-card {
+        padding: 1.75rem;
+      }
+
+      .welcome-card::before {
+        font-size: 5rem;
+        top: -0.5rem;
+        right: 1rem;
+      }
+
+      .section {
+        padding: 3.5rem 0;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .section-desc {
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+      }
+
+      .register-btn {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .faq-q {
+        padding: 0.9rem 1.1rem;
+        font-size: 0.88rem;
+      }
+
+      .closing {
+        padding: 4rem 1.25rem;
+      }
+
+      .closing h2 {
+        font-size: 2.2rem;
+      }
+
+      .closing p {
+        font-size: 0.95rem;
+      }
+
+      .closing-quote {
+        font-size: 1rem;
+        margin-bottom: 2rem;
       }
     }
 
@@ -2267,6 +2370,11 @@
               AI-powered business ventures addressing real-world problems across five defined domains. Top 10 teams
               advance to Day 2 Finals judged by industry leaders.</p>
 
+            <div style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
+              <a href="https://forms.gle/XwSthQtVizjCURfS9" target="_blank" class="register-btn" style="padding: 0.8rem 1.8rem; font-size: 1rem; margin-bottom: 0; animation: none;">Register for AI Business Conclave</a>
+              <p style="font-size: 0.85rem; color: var(--gold); margin-top: 0.5rem; font-weight: 600;">* Registration exclusively for MBA and MCA departments</p>
+            </div>
+
             <div style="margin-top:1.2rem;">
               <div class="event-section-title">Official Competition Domains</div>
               <div class="domain-grid" style="grid-template-columns:1fr;gap:0.5rem;">
@@ -2513,7 +2621,8 @@
           <tr>
             <td class="time-cell">09:45 – 13:05</td>
             <td class="activity-cell">
-              <strong style="color:var(--white);">⚡ PARALLEL MORNING TRACKS</strong> <span class="tag-parallel">2 SIMULTANEOUS</span><br>
+              <strong style="color:var(--white);">⚡ PARALLEL MORNING TRACKS</strong> <span class="tag-parallel">2
+                SIMULTANEOUS</span><br>
               <span style="color:var(--text-muted);font-size:0.82rem;">
                 Track A: 🏭 Company AI Product Demonstrations — 10 companies × 20 min<br>
                 Track B: 🏆 AI Business Conclave Finals — Top 10 teams × 15 min
@@ -2617,7 +2726,8 @@
           <div>
             <div class="event-section-title">Finals Overview</div>
             <p>The highest-stakes session of Innovotsava 2026. Top 10 teams pitch to a distinguished panel of industry
-              leaders, investors, and domain experts. Audience is the full Day 2 crowd — presentations must be clear to a non-technical audience.</p>
+              leaders, investors, and domain experts. Audience is the full Day 2 crowd — presentations must be clear to
+              a non-technical audience.</p>
 
             <div style="margin-top:1.2rem;">
               <div class="event-section-title">What Changes from Prelims</div>
@@ -2641,12 +2751,12 @@
                 <div class="prize-card prize-2">
                   <span class="prize-medal">🥈</span>
                   <div class="prize-pos">2nd Place</div>
-                  <div class="prize-detail">Runner-Up Trophy + Cash Prize + Certificate of Merit</div>
+                  <div class="prize-detail">Runner-Up Trophy + Certificate of Merit</div>
                 </div>
                 <div class="prize-card prize-3">
                   <span class="prize-medal">🥉</span>
                   <div class="prize-pos">3rd Place</div>
-                  <div class="prize-detail">2nd Runner-Up + Cash Prize + Certificate of Merit</div>
+                  <div class="prize-detail">2nd Runner-Up + Certificate of Merit</div>
                 </div>
               </div>
               <p style="font-size:0.8rem;color:var(--text-muted);margin-top:0.5rem;">All Finalists: Finalists'
