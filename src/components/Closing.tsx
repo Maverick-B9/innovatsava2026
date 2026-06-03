@@ -69,11 +69,10 @@ export default function Closing() {
           ref={logoRef}
           className="relative w-[clamp(8rem,18vw,12rem)] h-[clamp(8rem,18vw,12rem)] mb-8 filter drop-shadow-[0_0_20px_rgba(139,92,246,0.2)] animate-glow"
         >
-          <Image
+          <img
             src="/assets/innovotsava.png"
             alt="Innovotsava 2026 Final Badge"
-            fill
-            className="object-contain"
+            className="w-full h-full object-contain"
           />
         </div>
 

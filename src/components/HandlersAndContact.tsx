@@ -192,11 +192,10 @@ function TiltCard({ org }: { org: any }) {
       >
         {/* Profile Avatar */}
         <div className="relative w-24 h-24 mb-4 rounded-full overflow-hidden border border-white/10 bg-white/[0.02]">
-          <Image
+          <img
             src={`/assets/${org.avatar}.png`}
             alt={org.name}
-            fill
-            className="object-cover"
+            className="w-full h-full object-cover"
           />
         </div>
 

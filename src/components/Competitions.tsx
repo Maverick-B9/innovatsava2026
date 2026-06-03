@@ -123,11 +123,10 @@ function CompetitionChapter({ data, id, glowColor }: { data: any; id: string; gl
             
             {/* The Logo Image */}
             <div className="relative w-36 h-36 mb-6 p-2 rounded-2xl bg-white/[0.01] border border-white/5 backdrop-blur-md">
-              <Image
+              <img
                 src={data.logoPath}
                 alt={`${data.title} Badge`}
-                fill
-                className="object-contain p-4"
+                className="w-full h-full object-contain p-4"
               />
             </div>
 

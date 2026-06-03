@@ -34,6 +34,10 @@ export const metadata: Metadata = {
     "Capital Clash",
     "National Level Technology Festival",
   ],
+  icons: {
+    icon: "/assets/innovotsava.png",
+    apple: "/assets/innovotsava.png",
+  },
 };
 
 export default function RootLayout({

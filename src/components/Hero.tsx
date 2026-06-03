@@ -81,17 +81,15 @@ export default function Hero() {
 
         {/* Content container */}
         <div className="flex flex-col items-center justify-center text-center px-6 max-w-4xl z-10">
-          {/* Logo container */}
+          {/* Main Logo */}
           <div
             ref={logoRef}
-            className="relative w-[clamp(11rem,24vw,19rem)] h-[clamp(11rem,24vw,19rem)] mb-6 transition-all duration-300 filter drop-shadow-[0_0_35px_rgba(59,130,246,0.35)] animate-glow"
+            className="relative w-[clamp(16rem,45vw,36rem)] mt-16 lg:mt-24 mb-4 transition-all duration-300 filter drop-shadow-[0_0_35px_rgba(59,130,246,0.35)] animate-glow flex justify-center z-20"
           >
-            <Image
+            <img
               src="/assets/innovotsava.png"
               alt="Innovotsava 2026 Logo"
-              fill
-              priority
-              className="object-contain"
+              className="w-full h-auto object-contain"
             />
           </div>
 
