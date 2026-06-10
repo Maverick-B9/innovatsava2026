@@ -84,7 +84,7 @@ export default function Hero() {
           {/* Main Logo */}
           <div
             ref={logoRef}
-            className="relative w-[clamp(16rem,45vw,36rem)] mt-16 lg:mt-24 mb-4 transition-all duration-300 filter drop-shadow-[0_0_35px_rgba(59,130,246,0.35)] animate-glow flex justify-center z-20"
+            className="relative w-[clamp(10rem,40vw,36rem)] mt-16 lg:mt-24 mb-4 transition-all duration-300 filter drop-shadow-[0_0_35px_rgba(59,130,246,0.35)] animate-glow flex justify-center z-20"
           >
             <img
               src="/assets/innovotsava.png"

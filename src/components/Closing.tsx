@@ -148,7 +148,7 @@ export default function Closing() {
         className="relative w-full overflow-hidden select-none py-8 md:py-12"
       >
         {/* Large "INNOVOTSAVA" text like the "parallel" reference */}
-        <div className="flex justify-center px-4">
+        <div className="flex justify-center px-4 overflow-hidden">
           <h1 className="font-syne font-extrabold text-[clamp(3.5rem,15vw,12rem)] tracking-tighter leading-none text-white/[0.04] uppercase whitespace-nowrap pointer-events-none">
             INNOVOTSAVA
           </h1>

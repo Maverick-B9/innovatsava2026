@@ -120,7 +120,7 @@ export default function CompanyDemos() {
           {companyDemos.map((demo, idx) => (
             <div
               key={idx}
-              className="demo-3d-card w-[80vw] sm:w-[32vw] h-[40vh] flex-shrink-0 p-8 rounded-2xl glass-card border border-white/5 flex flex-col justify-between transform-gpu"
+              className="demo-3d-card w-[80vw] sm:w-[32vw] min-h-[40vh] flex-shrink-0 p-8 rounded-2xl glass-card border border-white/5 flex flex-col justify-between transform-gpu"
               style={{
                 boxShadow: "0 20px 50px rgba(0,0,0,0.5)",
               }}

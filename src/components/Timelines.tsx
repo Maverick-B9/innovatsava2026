@@ -299,7 +299,7 @@ export default function Timelines({ day }: TimelineProps) {
   );
 
   return (
-    <div ref={triggerRef} id={day === 1 ? "day1" : "day2"} className="relative h-[350vh] lg:h-[400vh] w-full bg-transparent z-10">
+    <div ref={triggerRef} id={day === 1 ? "day1" : "day2"} className="relative h-[300vh] sm:h-[350vh] lg:h-[400vh] w-full bg-transparent z-10">
       
       {/* Sticky Inner Container with solid space background */}
       <div
@@ -471,7 +471,7 @@ export default function Timelines({ day }: TimelineProps) {
             </div>
 
             {/* Horizontal Timeline Track */}
-            <div className="relative w-full h-12 flex items-center justify-between px-6 bg-white/[0.01] border border-white/5 rounded-xl mb-4">
+            <div className="relative w-full h-12 flex items-center justify-between px-3 sm:px-6 bg-white/[0.01] border border-white/5 rounded-xl mb-4 overflow-x-auto no-scrollbar">
               {/* Base grey line */}
               <div className="absolute left-6 right-6 h-[2px] bg-white/10 top-[23px]" />
               {/* Colored active scale line */}
@@ -501,7 +501,7 @@ export default function Timelines({ day }: TimelineProps) {
             </div>
 
             {/* Mobile Stacked Card Deck */}
-            <div className="relative w-full h-[380px] sm:h-[400px] max-w-md mx-auto flex items-center justify-center">
+            <div className="relative w-full h-[330px] sm:h-[400px] max-w-md mx-auto flex items-center justify-center">
               {schedule.map((item, idx) => {
                 const title = item.activity.split(" — ")[0];
                 const description = item.activity.includes(" — ") ? item.activity.split(" — ")[1] : null;
@@ -510,7 +510,7 @@ export default function Timelines({ day }: TimelineProps) {
                   <div
                     key={`mobile-card-${idx}`}
                     ref={el => { if (el) mobileCardRefs.current[idx] = el; }}
-                    className="absolute inset-x-0 w-full h-[350px] p-5 rounded-2xl border border-white/10 bg-slate-950/95 backdrop-blur-xl flex flex-col justify-between shadow-[0_15px_30px_rgba(0,0,0,0.55)]"
+                    className="absolute inset-x-0 w-full h-[300px] sm:h-[350px] p-5 rounded-2xl border border-white/10 bg-slate-950/95 backdrop-blur-xl flex flex-col justify-between shadow-[0_15px_30px_rgba(0,0,0,0.55)]"
                     style={{
                       opacity: idx === 0 ? 1 : 0,
                       transform: idx === 0 ? "translateY(0px) scale(1)" : "translateY(60px) scale(0.95)",

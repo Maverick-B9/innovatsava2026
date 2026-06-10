@@ -7,6 +7,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function SmoothScroll() {
   useEffect(() => {
+    // Disable Lenis on mobile/tablet to prevent scroll hijacking on touch devices
+    if (typeof window !== "undefined" && window.innerWidth < 1024) {
+      return;
+    }
+
     // Initialize Lenis
     const lenis = new Lenis({
       duration: 1.4,
