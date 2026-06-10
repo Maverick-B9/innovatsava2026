@@ -58,42 +58,31 @@ export const venueInfo = {
 };
 
 export const day1Schedule = [
-  { time: "08:00 – 08:45", activity: "📋 Registration & On-site Check-in (all tracks)" },
-  { time: "08:45 – 09:15", activity: "🎤 Opening Ceremony — Welcome Address, Lamp Lighting" },
-  {
-    time: "09:15 – 13:15",
-    activity: "⚡ PARALLEL MORNING COMPETITIONS (Tracks A, B, C, D)",
-    details: [
-      "Track A: 🤖 RISE OF AUTOBOTS — 20 teams · 15 min/team",
-      "Track B: 🚁 DRONEX CHALLENGE — 20 teams · 15 min/team",
-      "Track C: 🎮 GAMING MANIA — 20 teams · 15 min/team",
-      "Track D: 💡 CAPITAL CLASH PRELIMS — 25 teams · 15 min/team",
-    ],
-  },
-  { time: "13:15 – 14:00", activity: "🍽️ Lunch Break" },
-  { time: "14:00 – 16:30", activity: "🔬 DISCOVERY DAY PROJECT EXPO — Top 10 teams present to industry dignitaries" },
-  { time: "16:30 – 17:00", activity: "🌍 NGO Sessions — 2 NGOs × 20 minutes (impact introduction talks)" },
-  { time: "17:00 – 17:30", activity: "🤝 Networking Session + Competition Results Announcement" },
-  { time: "17:30", activity: "🔚 Day 1 Close" },
+  { time: "08:00 – 09:30", activity: "📋 Registration & Reporting", details: ["Venue: Arambha"] },
+  { time: "10:00 – 11:30", activity: "🎤 Opening Ceremony", details: ["Venue: APJ Abdul Kalam Theatre"] },
+  { time: "11:30 – 01:30", activity: "🤖 Robotics Competition", details: ["Venue: APJ Abdul Kalam Theatre", "Duration: 120 min"] },
+  { time: "10:30 – 01:30", activity: "🎮 Game Mania", details: ["Duration: 180 min"] },
+  { time: "11:30 – 01:30", activity: "🚁 Dronex", details: ["Venue: Library Entrance", "Duration: 120 min"] },
+  { time: "10:30 – 04:25", activity: "💡 Capital Clash", details: ["Duration: 235 min"] },
+  { time: "01:30 – 02:15", activity: "🍽️ Lunch Break", details: ["Duration: 45 min"] },
+  { time: "02:15 – 05:00", activity: "🔬 Student Project Expo", details: ["Venue: APJ Abdul Kalam Theatre", "Duration: 165 min"] },
+  { time: "05:00 – 05:40", activity: "🌍 NGO Sessions", details: ["Venue: APJ Abdul Kalam Theatre", "Duration: 40 min"] },
+  { time: "05:40 – 06:30", activity: "🏅 Prize Distribution & Closing – Day 1", details: ["Venue: APJ Abdul Kalam Theatre", "Duration: 50 min"] },
 ];
 
 export const day2Schedule = [
-  { time: "08:30 – 09:15", activity: "☕ Arrival, Check-in & Networking Coffee" },
-  { time: "09:15 – 09:45", activity: "🎤 Inauguration Ceremony — Day 2 Opening, Lighting of the Lamp" },
-  {
-    time: "09:45 – 13:05",
-    activity: "⚡ PARALLEL MORNING TRACKS",
-    details: [
-      "Track A: 🏭 Company AI Product Demonstrations — 10 companies × 20 min",
-      "Track B: 🏆 CAPITAL CLASH FINALS — Top 10 teams × 15 min",
-    ],
-  },
-  { time: "13:05 – 14:00", activity: "🍽️ Lunch Break" },
-  { time: "14:00 – 14:45", activity: "🎙️ Industry Keynote Speeches — 2–3 talks from top executives" },
-  { time: "14:45 – 15:25", activity: "🌍 NGO Sessions — 2 NGOs × 20 min (impact outcomes)" },
-  { time: "15:25 – 16:25", activity: "🎭 Cultural Programme — Student performing arts showcase" },
-  { time: "16:25 – 17:00", activity: "🏅 Valedictory Ceremony — Prize Distribution & Closing Address" },
+  { time: "08:30 – 09:30", activity: "📋 Registration & Check-in", details: ["Duration: 60 min"] },
+  { time: "10:00 – 10:30", activity: "🎤 Inauguration Ceremony", details: ["Duration: 30 min"] },
+  { time: "10:30 – 01:30", activity: "⚡ Parallel Morning Tracks", details: ["Track A: Company AI Product Demos", "Track B: Capital Clash Finals", "Duration: 180 min"] },
+  { time: "01:00 – 01:45", activity: "🍽️ Lunch Break", details: ["Duration: 45 min"] },
+  { time: "01:45 – 02:45", activity: "🎙️ Industry Keynote Speeches", details: ["Duration: 60 min"] },
+  { time: "02:45 – 03:25", activity: "🌍 NGO Session", details: ["Duration: 40 min"] },
+  { time: "03:25 – 04:30", activity: "🏅 Valedictory & Prize Distribution", details: ["Duration: 65 min"] },
+  { time: "04:30 – 05:30", activity: "🎭 Cultural Programme", details: ["Duration: 60 min"] },
+  { time: "05:30 – 06:00", activity: "🤝 Networking & Farewell", details: ["Duration: 30 min"] },
+  { time: "06:00 – 06:30", activity: "🔚 Closing Ceremony – Day 2", details: ["Duration: 30 min"] },
 ];
+
 
 export const competitionData = {
   autobots: {
