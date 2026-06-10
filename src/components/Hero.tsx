@@ -120,17 +120,6 @@ export default function Hero() {
               applied research, entrepreneurship, and cultural celebration.
             </p>
 
-            {/* Registration button */}
-            <div className="mb-10">
-              <a
-                href="https://forms.gle/czSNtNMVkFj6h6jK9"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-3.5 rounded-full text-xs font-mono tracking-widest text-white uppercase border border-blue-500/40 bg-blue-500/10 font-bold transition-all duration-300 shadow-[0_4px_24px_-8px_rgba(59,130,246,0.3)] hover:scale-105 hover:bg-blue-500/20 hover:border-blue-500/60 cursor-pointer pointer-events-auto"
-              >
-                Register Now
-              </a>
-            </div>
 
             {/* Call to Scroll */}
             <motion.div

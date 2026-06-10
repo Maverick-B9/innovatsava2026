@@ -108,16 +108,6 @@ export default function Closing() {
 
           {/* Right: CTA + Social */}
           <div className="flex flex-col items-center lg:items-end gap-6">
-            {/* Register Button */}
-            <a
-              href="https://forms.gle/czSNtNMVkFj6h6jK9"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative px-10 py-3.5 rounded-full text-xs font-mono tracking-[0.2em] text-white uppercase border border-purple-500/40 bg-purple-500/10 font-bold transition-all duration-300 shadow-[0_4px_30px_-8px_rgba(168,85,247,0.4)] hover:scale-105 hover:bg-purple-500/20 hover:border-purple-500/60 cursor-pointer"
-            >
-              Register Now
-              <span className="absolute inset-0 rounded-full bg-purple-500/5 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-            </a>
 
             {/* Instagram Icon */}
             <a

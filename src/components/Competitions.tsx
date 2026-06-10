@@ -141,20 +141,7 @@ function CompetitionChapter({ data, id, glowColor }: { data: any; id: string; gl
               {data.sub}
             </p>
 
-            {/* Registration button */}
-            <a
-              href="https://forms.gle/czSNtNMVkFj6h6jK9"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-2.5 rounded-full text-xs font-mono tracking-widest text-white uppercase border font-semibold transition-all duration-300 shadow-md backdrop-blur-md hover:scale-105"
-              style={{
-                borderColor: `${data.primary}44`,
-                backgroundColor: `${data.primary}11`,
-                boxShadow: `0 4px 20px -8px ${data.primary}55`,
-              }}
-            >
-              Register for Event
-            </a>
+
           </div>
 
           {/* Right Column: Progressive scrolling content */}
